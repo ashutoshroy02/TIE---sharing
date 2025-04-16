@@ -1,0 +1,145 @@
+label_name,bbox_x,bbox_y,bbox_width,bbox_height,image_name,image_width,image_height
+Table,17,231,467,234,Poorly-scanned-image.png,533,530
+Text,31,4,492,223,Poorly-scanned-image.png,533,530
+Text,0,448,481,76,Poorly-scanned-image.png,533,530
+Section-header,127,46,73,26,blur&shadow.jpg,347,507
+Text,9,134,303,354,blur&shadow.jpg,347,507
+Section-header,360,7,270,51,font_wavy_page.jpg,868,1452
+Text,153,68,695,232,font_wavy_page.jpg,868,1452
+Text,149,307,698,246,font_wavy_page.jpg,868,1452
+Text,155,559,687,529,font_wavy_page.jpg,868,1452
+Text,156,1095,695,250,font_wavy_page.jpg,868,1452
+Text,63,557,61,40,font_wavy_page.jpg,868,1452
+Text,72,22,64,39,font_wavy_page.jpg,868,1452
+Text,41,314,103,77,font_wavy_page.jpg,868,1452
+Text,70,1084,53,42,font_wavy_page.jpg,868,1452
+Text,70,393,59,40,font_wavy_page.jpg,868,1452
+Section-header,668,273,2063,640,heading and two cloumn.png,3305,4683
+Text,301,1122,1340,746,heading and two cloumn.png,3305,4683
+Text,301,1897,1322,1274,heading and two cloumn.png,3305,4683
+Text,337,3243,1298,717,heading and two cloumn.png,3305,4683
+Text,1670,1126,1340,871,heading and two cloumn.png,3305,4683
+Text,1658,2039,1357,1891,heading and two cloumn.png,3305,4683
+Page-footer,313,4001,2662,231,heading and two cloumn.png,3305,4683
+Figure,153,551,516,516,heading and two cloumn.png,3305,4683
+Handwriting,200,421,385,124,heading and two cloumn.png,3305,4683
+Section-header,1427,421,688,190,list or index .png,3305,4683
+List-item,420,634,2733,3497,list or index .png,3305,4683
+Handwriting,76,1500,207,2697,list or index .png,3305,4683
+Text,1682,4132,178,113,list or index .png,3305,4683
+Section-header,85,31,380,44,low_quality.png,542,729
+Text,41,99,464,124,low_quality.png,542,729
+Text,41,226,467,149,low_quality.png,542,729
+Text,48,380,460,77,low_quality.png,542,729
+Text,47,462,460,132,low_quality.png,542,729
+List-item,53,603,452,86,low_quality.png,542,729
+Section-header,215,75,129,19,low_quality.png,542,729
+Text,264,687,23,18,low_quality.png,542,729
+Section-header,1250,135,1555,130,map 2.png,3075,4281
+caption,2340,1441,130,1376,map 2.png,3075,4281
+Figure,486,352,1837,3669,map 2.png,3075,4281
+Text,1386,4102,190,81,map 2.png,3075,4281
+Section-header,1393,343,1566,130,map.png,3294,4667
+Figure,265,656,2717,3314,map.png,3294,4667
+caption,1535,4064,201,118,map.png,3294,4667
+Text,1558,4242,148,89,map.png,3294,4667
+Section-header,203,46,80,27,shadow.jpg,496,722
+Text,30,122,424,90,shadow.jpg,496,722
+Text,23,217,450,480,shadow.jpg,496,722
+Text,69,190,1598,157,shadow_less_bright.jpg,1936,2592
+Text,66,364,1608,167,shadow_less_bright.jpg,1936,2592
+Text,66,627,1627,213,shadow_less_bright.jpg,1936,2592
+Text,66,925,1627,112,shadow_less_bright.jpg,1936,2592
+Text,69,1129,1637,164,shadow_less_bright.jpg,1936,2592
+Text,66,1375,1631,164,shadow_less_bright.jpg,1936,2592
+Text,62,1572,1627,161,shadow_less_bright.jpg,1936,2592
+Text,62,1828,1627,223,shadow_less_bright.jpg,1936,2592
+Text,59,2074,1621,184,shadow_less_bright.jpg,1936,2592
+Section-header,76,118,922,66,shadow_less_bright.jpg,1936,2592
+Section-header,82,581,502,43,shadow_less_bright.jpg,1936,2592
+Section-header,69,869,761,52,shadow_less_bright.jpg,1936,2592
+Section-header,66,1070,1306,59,shadow_less_bright.jpg,1936,2592
+Section-header,72,1322,679,59,shadow_less_bright.jpg,1936,2592
+Section-header,62,1762,702,66,shadow_less_bright.jpg,1936,2592
+Section-header,312,325,2617,124,small font map.png,3294,4667
+Figure,276,543,2682,3438,small font map.png,3294,4667
+caption,920,4005,1501,195,small font map.png,3294,4667
+Figure,182,171,1465,998,stamp.png,3294,4667
+Section-header,330,272,868,148,table and two column.png,3294,4667
+Table,324,496,2688,1825,table and two column.png,3294,4667
+Text,359,2345,1288,1867,table and two column.png,3294,4667
+Text,1682,2363,1335,1837,table and two column.png,3294,4667
+Text,1564,4236,177,95,table and two column.png,3294,4667
+Section-header,299,210,279,79,table.png,2625,3450
+Table,531,467,1546,2633,table.png,2625,3450
+Text,1186,3131,157,83,table.png,2625,3450
+Section-header,526,389,1489,61,table.png,2625,3450
+Figure,135,1518,3029,2336,text and image.png,3305,4683
+,129,344,2330,705,text and image.png,3305,4683
+Text,141,1109,563,362,text and image.png,3305,4683
+Text,1332,3978,534,124,text and image.png,3305,4683
+Text,153,4138,782,219,text and image.png,3305,4683
+Text,2026,4120,1043,279,text and image.png,3305,4683
+,1362,403,628,172,text.png,3305,4683
+Text,313,611,2709,3136,text.png,3305,4683
+Text,283,3865,688,219,text.png,3305,4683
+Text,1961,3776,1037,368,text.png,3305,4683
+Section-header,1203,179,1162,109,two column and table.png,2625,3450
+Text,352,445,996,830,two column and table.png,2625,3450
+List-item,339,1978,1018,183,two column and table.png,2625,3450
+List-item,347,2179,1004,205,two column and table.png,2625,3450
+List-item,356,2398,1000,210,two column and table.png,2625,3450
+List-item,334,2843,1026,96,two column and table.png,2625,3450
+List-item,343,2612,1013,109,two column and table.png,2625,3450
+List-item,334,2738,1026,96,two column and table.png,2625,3450
+List-item,1365,1808,996,223,two column and table.png,2625,3450
+Table,478,1341,1742,450,two column and table.png,2625,3450
+List-item,1387,2039,965,201,two column and table.png,2625,3450
+List-item,1382,2253,978,157,two column and table.png,2625,3450
+List-item,1378,2804,965,144,two column and table.png,2625,3450
+List-item,1382,2428,974,201,two column and table.png,2625,3450
+List-item,1374,2646,978,148,two column and table.png,2625,3450
+Page-footer,356,2970,2004,148,two column and table.png,2625,3450
+Section-header,343,1913,349,57,two column and table.png,2625,3450
+Section-header,863,1284,983,44,two column and table.png,2625,3450
+Text,426,1821,952,70,two column and table.png,2625,3450
+List-item,1361,502,1018,162,two column and table.png,2625,3450
+List-item,1369,668,1000,253,two column and table.png,2625,3450
+List-item,1369,926,996,153,two column and table.png,2625,3450
+List-item,1369,1074,1013,179,two column and table.png,2625,3450
+Text,1426,328,948,175,two column and table.png,2625,3450
+Section-header,330,345,581,92,two column and table.png,2625,3450
+Section-header,1222,414,845,154,two column list.png,3294,4667
+List-item,300,691,2694,3420,two column list.png,3294,4667
+Section-header,1446,219,1690,136,two column splitted.png,3294,4667
+Text,271,419,1394,2038,two column splitted.png,3294,4667
+Text,1688,443,1311,1477,two column splitted.png,3294,4667
+Text,294,2647,1341,916,two column splitted.png,3294,4667
+Text,1671,2121,1323,839,two column splitted.png,3294,4667
+Text,312,3639,1317,484,two column splitted.png,3294,4667
+Text,1677,3042,1317,1046,two column splitted.png,3294,4667
+Section-header,1677,1973,603,89,two column splitted.png,3294,4667
+Section-header,300,2481,614,83,two column splitted.png,3294,4667
+Section-header,337,397,1227,136,two column.png,3305,4683
+Text,1682,581,1363,1138,two column.png,3305,4683
+Text,331,599,1322,3657,two column.png,3305,4683
+Text,1682,1755,1357,2507,two column.png,3305,4683
+Text,1003,479,1164,154,unidentified.png,3294,4667
+Table,1180,762,851,431,unidentified.png,3294,4667
+List-item,944,1252,1329,414,unidentified.png,3294,4667
+Table,1074,2511,1193,354,unidentified.png,3294,4667
+Text,926,2115,1335,260,unidentified.png,3294,4667
+Text,1281,3013,638,112,unidentified.png,3294,4667
+Page-footer,578,3899,2062,295,unidentified.png,3294,4667
+Section-header,260,197,384,79,y101.png,2625,3450
+Figure,308,415,1869,2629,y101.png,2625,3450
+caption,2203,1175,87,1122,y101.png,2625,3450
+Text,1195,3127,166,83,y101.png,2625,3450
+Section-header,117,93,1004,104,y61.png,2908,4311
+Text,1383,4005,158,109,y61.png,2908,4311
+caption,2393,1975,131,300,y61.png,2908,4311
+Figure,330,284,2030,3694,y61.png,2908,4311
+Section-header,1171,197,1171,86,y662.png,2625,3450
+Figure,360,402,1978,2568,y662.png,2625,3450
+caption,771,2987,1183,74,y662.png,2625,3450
+Text,1275,3128,151,81,y662.png,2625,3450
