@@ -18,4 +18,3 @@ Welcome! Please follow the structure below when uploading files to this reposito
 ✅ **Note:** Ensure that files are named appropriately based on their content type  
 (e.g., `map_river_indus.png`, `table_population_growth.jpg`).
 
-📬 If you have any questions or need assistance with file uploads or formatting, feel free to raise an issue in the repository.
