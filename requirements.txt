@@ -2,3 +2,4 @@ surya-ocr
 pdf2image
 python-magic
 PyMuPDF
+img2table[surya]
