@@ -8,7 +8,7 @@ import cv2
 import json
 import os
 from typing import Dict, List, Any, Tuple, Union
-from pdf_to_pages import process_file
+# from pdf_to_pages import process_file
 from surya.recognition import RecognitionPredictor
 from surya.detection import DetectionPredictor
 # from preprocessing import preprocess_image
