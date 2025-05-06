@@ -4,22 +4,7 @@ Does not work for Shadow pages. if the page has a little shadow it darkens it ve
 
 import cv2
 import numpy as np
-from pdf_to_pages import process_file
-
-# def deskew(image):
-    #         co_ords = np.column_stack(np.where(image > 0))
-    #         angle = cv2.minAreaRect(co_ords)[-1]
-    #         if angle < -45:
-    #             angle   = -(90 + angle)
-    #         else:
-    #             angle = -angle
-    #             (h, w) = image.shape[:2]
-    #             center = (w // 2, h // 2)
-    #         M = cv2.getRotationMatrix2D(center, angle, 1.0)
-    #         rotated = cv2.warpAffine(image, M, (w, h), flags=cv2.INTER_CUBIC,
-    #         borderMode=cv2.BORDER_REPLICATE)
-    #         return rotated
-    
+# from pdf_to_pages import process_file 
 
 import cv2
 import numpy as np
@@ -45,11 +30,10 @@ def preprocess_image(image):
     return pdf_page
 
 
-file_path = r'book2-120-125.pdf' 
-pages = process_file(file_path)
-preprocessed_pages = [preprocess_image(page) for page in pages]
-
-
+# # file_path = r'book2-120-125.pdf' 
+# file_path = r"Z:\TO DO\codes\IIT\ashu\model_output\original dataset\two column and table.png"
+# pages = process_file(file_path)
+# preprocessed_pages = [preprocess_image(page) for page in pages]
 
 
 
@@ -61,14 +45,16 @@ for idx, page in enumerate(pages):
     input("Press Enter to continue to the next page...")"""
 
 
-"""# Display the preprocessed pages
+"""
+# Display the preprocessed pages
+from PIL import Image
 for idx, preprocessed_page in enumerate(preprocessed_pages):
     print(f"Displaying preprocessed page {idx+1}")
     # Convert OpenCV image (numpy array) back to PIL Image for display
     pil_img = Image.fromarray(preprocessed_page)
     pil_img.show()
-    input("Press Enter to continue to the next preprocessed page...")
-"""
+    input("Press Enter to continue to the next preprocessed page...")"""
+
 
 
 ##to test
