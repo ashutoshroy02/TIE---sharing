@@ -32,7 +32,7 @@ def create_md_from_json(file_path, output_md_file: str):
 # Example usage
 # create_md_from_json("your_input.json", "output.md")
 
-from ocr_processor import all_result
+# from ocr_processor import all_result
 # Example usage
 file_path = r"all_results.json"
 create_md_from_json(file_path, "ocr_output.md")
