@@ -5,7 +5,7 @@ This file return the json for the layout of the page only label, bbox, position 
 
 from PIL import Image
 from surya.layout import LayoutPredictor
-# from pdf_to_pages import process_file
+from pdf_to_pages import process_file
 import matplotlib.pyplot as plt
 from matplotlib import patches
 import json
@@ -15,24 +15,24 @@ import numpy as np
 layout_predictor = LayoutPredictor()
 
 #------------------------------------------#
-#process pdf to pages
-import fitz  # PyMuPDF
-from PIL import Image
-from concurrent.futures import ThreadPoolExecutor
-from io import BytesIO
+# #process pdf to pages
+# import fitz  # PyMuPDF
+# from PIL import Image
+# from concurrent.futures import ThreadPoolExecutor
+# from io import BytesIO
 
-def render_page_to_image(page, dpi=200):
-    zoom = dpi / 72  # 72 is default dpi
-    mat = fitz.Matrix(zoom, zoom)
-    pix = page.get_pixmap(matrix=mat, alpha=False)
-    img_bytes = pix.tobytes("ppm")
-    return Image.open(BytesIO(img_bytes))
+# def render_page_to_image(page, dpi=200):
+#     zoom = dpi / 72  # 72 is default dpi
+#     mat = fitz.Matrix(zoom, zoom)
+#     pix = page.get_pixmap(matrix=mat, alpha=False)
+#     img_bytes = pix.tobytes("ppm")
+#     return Image.open(BytesIO(img_bytes))
 
-def process_file(file_path, dpi=200, max_workers=4):
-    doc = fitz.open(file_path)
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        images = list(executor.map(lambda page: render_page_to_image(page, dpi), doc))
-    return images
+# def process_file(file_path, dpi=200, max_workers=4):
+#     doc = fitz.open(file_path)
+#     with ThreadPoolExecutor(max_workers=max_workers) as executor:
+#         images = list(executor.map(lambda page: render_page_to_image(page, dpi), doc))
+#     return images
 
 #####
 #------------------------------------------#
