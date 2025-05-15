@@ -1,0 +1,48 @@
+KALIBANGAN : 1960-69
+Excavations at Kalibangan - The Harappans (1960-69)
+
+DISTRICT HANUMANGARH, RAJASTHAN
+KLB-2, TRENCH D-5
+HOUSE
+
+1 METRE
+
+PHASE - IX
+
+D-5
++
+E-5
++
+
+<-- L A N E -->
+
+ROOM-1
+
+ROOM-6
+
+ROOM-2
+
+COURTYARD
+
+N.S. STREET
+
+PIT
+
+COURTYARD
+
+ROOM-5
+
+ROOM-3
+ROOM-4
+
+ENTRANCE
+
+D-6
++
+PLAN
+Fig. 6.51
+
++
+E-6
+
+274
