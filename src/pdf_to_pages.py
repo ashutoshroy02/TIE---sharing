@@ -1,6 +1,11 @@
 '''RETURNS A LIST OF PAGES OF PDF <FUNCTION PROCESS_FILE> .Converts the pdf to images and passes it to layout model .it stores the pages as a list and does not save on device (can be saved on device) .
- It handles any input pdf or images any kind . Also the DPI (Density per Inch) is set to 200 for better ocr task . 
+ It handles any input pdf or images any kind . Also the DPI (Density per Inch) is set to 200 for better ocr task and the bbox is calculated according to the dpi (dpi ∝ bbox coordinates) . 
  we can reduce it to faster the process but affect OCR quality'''
+
+
+'''   Also the DPI (Density per Inch) is set to 200 for better ocr task and the bbox is calculated according to the dpi '''
+
+'''  (DPI ∝ bbox coordinates)   '''
 
 import fitz  # PyMuPDF
 from PIL import Image
