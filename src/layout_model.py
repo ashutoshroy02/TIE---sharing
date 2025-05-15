@@ -3,6 +3,10 @@ STEP 2 : Uses Surya Model to layout each page of the pdf . The surya model retur
 This file return the json for the layout of the page only label, bbox, position and section image . 
 '''
 
+'''   Also the DPI (Density per Inch) is set to 200 for better ocr task and the bbox is calculated according to the dpi '''
+
+'''  (DPI ∝ bbox coordinates)   '''
+
 from PIL import Image
 from surya.layout import LayoutPredictor
 from pdf_to_pages import process_file
