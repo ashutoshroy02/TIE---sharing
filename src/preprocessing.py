@@ -11,9 +11,12 @@ import numpy as np
 
 
 def preprocess_image(image):
-
-    # Convert PIL Image to OpenCV format
-    img = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+    # Check if input is already numpy array
+    if isinstance(image, np.ndarray):
+        img = image
+    else:
+        # Convert PIL Image to OpenCV format
+        img = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
     
     # denoised =  cv2.fastNlMeansDenoisingColored(img, None, 10, 10, 7, 20)
     denoised  = cv2.bilateralFilter(img, 9, 75, 75)    #use any one if :: for higher qaulity for pages use this else use above
