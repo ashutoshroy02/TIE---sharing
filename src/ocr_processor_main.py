@@ -119,7 +119,7 @@ def process_single_page(page_image, page_number=None):
         region_pil = Image.fromarray(preprocessed_region)
         
         # Get OCR predictions for the region
-        region_predictions = recognition_predictor([region_pil], [None], detection_predictor)
+        region_predictions = recognition_predictor([region_pil], ['ocr_with_boxes'], detection_predictor)
         
         # Extract text from predictions
         text = ""
@@ -281,7 +281,7 @@ def process_pdf(pdf_path, output_folder, padding=5):
 
 if __name__ == "__main__":
     # Example usage
-    pdf_path = r"testing-pdf\book2 (2).pdf"  # Replace with your PDF file path
+    pdf_path = r"../testing-documents/diff-pages-book.pdf"  # Replace with your PDF file path
     output_folder = "output-try"  # Replace with your desired output folder
     process_pdf(pdf_path, output_folder)
 
