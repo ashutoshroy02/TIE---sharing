@@ -1,0 +1,161 @@
+{
+    "page_number": 1,
+    "processed_date": "2025-05-28 13:48:56.964268",
+    "total_regions": 7,
+    "regions": [
+        {
+            "region_id": 1,
+            "label": "SectionHeader",
+            "position": 0,
+            "original_bbox": [
+                80.712890625,
+                176.953125,
+                1205.04345703125,
+                563.671875
+            ],
+            "padded_bbox": [
+                75,
+                171,
+                1210,
+                568
+            ],
+            "image_size": [
+                397,
+                1135
+            ],
+            "ocr_text": "<b>EXCAVATIONS AT</b> KALIBANGAN <b>THE HARAPPANS</b>"
+        },
+        {
+            "region_id": 2,
+            "label": "Text",
+            "position": 1,
+            "original_bbox": [
+                92.6180419921875,
+                571.2890625,
+                331.9317626953125,
+                629.8828125
+            ],
+            "padded_bbox": [
+                87,
+                566,
+                336,
+                634
+            ],
+            "image_size": [
+                68,
+                249
+            ],
+            "ocr_text": "<math>\\overline{(1960-1969)}</math>"
+        },
+        {
+            "region_id": 3,
+            "label": "SectionHeader",
+            "position": 2,
+            "original_bbox": [
+                91.96224975585938,
+                660.9375,
+                271.3970947265625,
+                718.359375
+            ],
+            "padded_bbox": [
+                86,
+                655,
+                276,
+                723
+            ],
+            "image_size": [
+                68,
+                190
+            ],
+            "ocr_text": "\u043c PART O A"
+        },
+        {
+            "region_id": 4,
+            "label": "Picture",
+            "position": 3,
+            "original_bbox": [
+                72.238037109375,
+                776.953125,
+                1593.2724609375,
+                1897.021484375
+            ],
+            "padded_bbox": [
+                67,
+                771,
+                1598,
+                1902
+            ],
+            "image_size": [
+                1131,
+                1531
+            ],
+            "ocr_text": "<math>\\overline{\\phantom{a}}</math> r I"
+        },
+        {
+            "region_id": 5,
+            "label": "SectionHeader",
+            "position": 5,
+            "original_bbox": [
+                707.448486328125,
+                2001.2958984375,
+                892.6845703125,
+                2043.6748046875
+            ],
+            "padded_bbox": [
+                702,
+                1996,
+                897,
+                2048
+            ],
+            "image_size": [
+                52,
+                195
+            ],
+            "ocr_text": "D B.B. LAL"
+        },
+        {
+            "region_id": 6,
+            "label": "SectionHeader",
+            "position": 6,
+            "original_bbox": [
+                79.0986328125,
+                2083.8232421875,
+                462.48486328125,
+                2175.2724609375
+            ],
+            "padded_bbox": [
+                74,
+                2078,
+                467,
+                2180
+            ],
+            "image_size": [
+                102,
+                393
+            ],
+            "ocr_text": "<b>JAGAT PATI JOSHI</b> <b>MADHU BALA</b>"
+        },
+        {
+            "region_id": 7,
+            "label": "SectionHeader",
+            "position": 7,
+            "original_bbox": [
+                1032.31787109375,
+                2086.0537109375,
+                1521.43798828125,
+                2176.3876953125
+            ],
+            "padded_bbox": [
+                1027,
+                2081,
+                1526,
+                2181
+            ],
+            "image_size": [
+                100,
+                499
+            ],
+            "ocr_text": "A.K. SHARMA K.S. RAMACHANDRAN"
+        }
+    ]
+}

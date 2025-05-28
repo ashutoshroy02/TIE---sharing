@@ -1,0 +1,601 @@
+{
+    "page_number": 11,
+    "processed_date": "2025-05-28 14:10:55.983917",
+    "total_regions": 27,
+    "regions": [
+        {
+            "region_id": 1,
+            "label": "SectionHeader",
+            "position": 0,
+            "original_bbox": [
+                783.72216796875,
+                242.28515625,
+                1016.17529296875,
+                281.25
+            ],
+            "padded_bbox": [
+                778,
+                237,
+                1021,
+                286
+            ],
+            "image_size": [
+                49,
+                243
+            ],
+            "ocr_text": "<b>CONTENTS</b>"
+        },
+        {
+            "region_id": 2,
+            "label": "TableOfContents",
+            "position": 1,
+            "original_bbox": [
+                214.6962890625,
+                339.55078125,
+                1551.3017578125,
+                1194.140625
+            ],
+            "padded_bbox": [
+                209,
+                334,
+                1556,
+                1199
+            ],
+            "image_size": [
+                865,
+                1347
+            ],
+            "ocr_text": "rage Foreword iii <math>a.</math> Preface <math>\\mathbf b</math>. V Acknowledgements vii <math>\\mathbf{C}</math>. List of Figures <math>\\mathbf{d}_{\\cdot}</math> Xi-XX Introduction and a Summary of the Results <math>1 - 10</math> B.B.Lal 1. Some thoughts on the now-Dry River on whose bank <math>2.</math> stands the site of Kalibangan <b>B.B.Lal</b> <math>11 - 22</math> The Chronological Horizon 3. B.B.Lal 23-26 The Harappan settlement at Kalibangan - An overview Jagat Pati Joshi 27-32 4. KLB-1 Stratigraphy and Structures Jagat Pati Joshi 33-114 5. Stratigraphy 1. <math>2.</math> <b>Structures</b> The Fortification <math>(i)</math> The Bipartite Wall <math>(ii)</math> (iii) Entrances Catalogue of Structures Northern Rhomb <math>(a)</math> The Elite Residential Area"
+        },
+        {
+            "region_id": 3,
+            "label": "Handwriting",
+            "position": 2,
+            "original_bbox": [
+                24.440872192382812,
+                779.296875,
+                123.59161376953125,
+                1192.96875
+            ],
+            "padded_bbox": [
+                19,
+                774,
+                128,
+                1197
+            ],
+            "image_size": [
+                423,
+                109
+            ],
+            "ocr_text": "\u0623 \u0155 <b>Nort</b> \u0125"
+        },
+        {
+            "region_id": 4,
+            "label": "PageHeader",
+            "position": 3,
+            "original_bbox": [
+                44.745208740234375,
+                1202.50927734375,
+                111.787353515625,
+                2093.302734375
+            ],
+            "padded_bbox": [
+                39,
+                1197,
+                116,
+                2098
+            ],
+            "image_size": [
+                901,
+                77
+            ],
+            "ocr_text": "S<br>D<br>D<br>O \u017f <math>\\frac{1}{2}</math> <math>\\frac{1}{2}</math> )<br>H \u05a1\u0593\u05c7\u059a<br>\u05a7\u05a9\u05a9\u05a9\u05a9\u05a9\u0593\u0593\u0593\u0593\u0593\u0593\u0593\u0593\u0593\u0593\u05a7\u059d\u0593\u05a7\u059d\u05a9\u0593\u0593\u05a7\u059d\u05ac\u05a7\u059d\u05a9\u0593\u05a7\u059d\u05ac\u05a7\u05a9\u0593\u05a7\u05a6\u05a7\u05a9\u0593\u05a7\u05a7\u05a9\u05a9\u0593\u05a7\u0593\u05a7\u05a7\u0593\u05a7\u05a7\u05a7\u05a9\u05a9\u05a9\u05a9\u0593\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7\u05a7 <math>\\lesssim</math> <math>\\sim</math> o'. <math>\\overline{\\phantom{0}}</math>"
+        },
+        {
+            "region_id": 5,
+            "label": "ListItem",
+            "position": 4,
+            "original_bbox": [
+                370.068603515625,
+                1199.7255477905273,
+                583.957763671875,
+                1214.1495361328125
+            ],
+            "padded_bbox": [
+                365,
+                1194,
+                588,
+                1219
+            ],
+            "image_size": [
+                25,
+                223
+            ],
+            "ocr_text": "uivuv - E"
+        },
+        {
+            "region_id": 6,
+            "label": "ListItem",
+            "position": 5,
+            "original_bbox": [
+                382.175537109375,
+                1221.46826171875,
+                598.486083984375,
+                1253.391845703125
+            ],
+            "padded_bbox": [
+                377,
+                1216,
+                603,
+                1258
+            ],
+            "image_size": [
+                42,
+                226
+            ],
+            "ocr_text": "<math>(ii)</math> Group <math>B</math>"
+        },
+        {
+            "region_id": 7,
+            "label": "ListItem",
+            "position": 6,
+            "original_bbox": [
+                375.31494140625,
+                1264.6138916015625,
+                598.08251953125,
+                1299.7437744140625
+            ],
+            "padded_bbox": [
+                370,
+                1259,
+                603,
+                1304
+            ],
+            "image_size": [
+                45,
+                233
+            ],
+            "ocr_text": "<math>(iii)</math> Group C"
+        },
+        {
+            "region_id": 8,
+            "label": "ListItem",
+            "position": 7,
+            "original_bbox": [
+                379.754150390625,
+                1306.086669921875,
+                592.836181640625,
+                1341.91357421875
+            ],
+            "padded_bbox": [
+                374,
+                1301,
+                597,
+                1346
+            ],
+            "image_size": [
+                45,
+                223
+            ],
+            "ocr_text": "(iv) Group D"
+        },
+        {
+            "region_id": 9,
+            "label": "ListItem",
+            "position": 8,
+            "original_bbox": [
+                300.251953125,
+                1350.138427734375,
+                623.103515625,
+                1384.153076171875
+            ],
+            "padded_bbox": [
+                295,
+                1345,
+                628,
+                1389
+            ],
+            "image_size": [
+                44,
+                333
+            ],
+            "ocr_text": "(b) Southern Rhomb"
+        },
+        {
+            "region_id": 10,
+            "label": "ListItem",
+            "position": 9,
+            "original_bbox": [
+                390.650390625,
+                1391.8203125,
+                590.01123046875,
+                1426.11376953125
+            ],
+            "padded_bbox": [
+                385,
+                1386,
+                595,
+                1431
+            ],
+            "image_size": [
+                45,
+                210
+            ],
+            "ocr_text": "Group E"
+        },
+        {
+            "region_id": 11,
+            "label": "ListItem",
+            "position": 10,
+            "original_bbox": [
+                387.825439453125,
+                1434.059814453125,
+                587.186279296875,
+                1466.959228515625
+            ],
+            "padded_bbox": [
+                382,
+                1429,
+                592,
+                1471
+            ],
+            "image_size": [
+                42,
+                210
+            ],
+            "ocr_text": "Group F lii)"
+        },
+        {
+            "region_id": 12,
+            "label": "ListItem",
+            "position": 11,
+            "original_bbox": [
+                383.38623046875,
+                1476.0205078125,
+                593.23974609375,
+                1509.4775390625
+            ],
+            "padded_bbox": [
+                378,
+                1471,
+                598,
+                1514
+            ],
+            "image_size": [
+                43,
+                220
+            ],
+            "ocr_text": "<math>(iii)</math> Group G"
+        },
+        {
+            "region_id": 13,
+            "label": "ListItem",
+            "position": 12,
+            "original_bbox": [
+                382.175537109375,
+                1515.0537109375,
+                592.836181640625,
+                1550.18359375
+            ],
+            "padded_bbox": [
+                377,
+                1510,
+                597,
+                1555
+            ],
+            "image_size": [
+                45,
+                220
+            ],
+            "ocr_text": "<math>(iv)</math> Group H"
+        },
+        {
+            "region_id": 14,
+            "label": "ListItem",
+            "position": 13,
+            "original_bbox": [
+                384.7987060546875,
+                1555.759765625,
+                585.9755859375,
+                1592.0048828125
+            ],
+            "padded_bbox": [
+                379,
+                1550,
+                590,
+                1597
+            ],
+            "image_size": [
+                47,
+                211
+            ],
+            "ocr_text": "(v) Group-"
+        },
+        {
+            "region_id": 15,
+            "label": "ListItem",
+            "position": 14,
+            "original_bbox": [
+                385.8076171875,
+                1599.8115234375,
+                591.62548828125,
+                1634.3837890625
+            ],
+            "padded_bbox": [
+                380,
+                1594,
+                596,
+                1639
+            ],
+            "image_size": [
+                45,
+                216
+            ],
+            "ocr_text": "[vi Group J"
+        },
+        {
+            "region_id": 16,
+            "label": "ListItem",
+            "position": 15,
+            "original_bbox": [
+                382.5791015625,
+                1642.748046875,
+                594.85400390625,
+                1678.435546875
+            ],
+            "padded_bbox": [
+                377,
+                1637,
+                599,
+                1683
+            ],
+            "image_size": [
+                46,
+                222
+            ],
+            "ocr_text": "<math>(vii)</math> Group K"
+        },
+        {
+            "region_id": 17,
+            "label": "ListItem",
+            "position": 16,
+            "original_bbox": [
+                238.91015625,
+                1687.07861328125,
+                853.13525390625,
+                1722.20849609375
+            ],
+            "padded_bbox": [
+                233,
+                1682,
+                858,
+                1727
+            ],
+            "image_size": [
+                45,
+                625
+            ],
+            "ocr_text": "6. KLB-2 Stratigraphy and Structures"
+        },
+        {
+            "region_id": 18,
+            "label": "ListItem",
+            "position": 17,
+            "original_bbox": [
+                311.7535400390625,
+                1728.0634765625,
+                578.71142578125,
+                1764.30859375
+            ],
+            "padded_bbox": [
+                306,
+                1723,
+                583,
+                1769
+            ],
+            "image_size": [
+                46,
+                277
+            ],
+            "ocr_text": "Stratigraphy"
+        },
+        {
+            "region_id": 19,
+            "label": "ListItem",
+            "position": 18,
+            "original_bbox": [
+                305.0947265625,
+                1770.4423828125,
+                554.49755859375,
+                1805.0146484375
+            ],
+            "padded_bbox": [
+                300,
+                1765,
+                559,
+                1810
+            ],
+            "image_size": [
+                45,
+                259
+            ],
+            "ocr_text": "<math>\\overline{2}</math> . <b>Structures</b>"
+        },
+        {
+            "region_id": 20,
+            "label": "Text",
+            "position": 19,
+            "original_bbox": [
+                230.8388671875,
+                1813.37890625,
+                739.330078125,
+                1847.951171875
+            ],
+            "padded_bbox": [
+                225,
+                1808,
+                744,
+                1852
+            ],
+            "image_size": [
+                44,
+                519
+            ],
+            "ocr_text": "<b>General Features of Structures</b>"
+        },
+        {
+            "region_id": 21,
+            "label": "ListItem",
+            "position": 20,
+            "original_bbox": [
+                379.3505859375,
+                1855.7578125,
+                1069.44580078125,
+                1891.4453125
+            ],
+            "padded_bbox": [
+                374,
+                1850,
+                1074,
+                1896
+            ],
+            "image_size": [
+                46,
+                700
+            ],
+            "ocr_text": "A. Fortification, Bastions and Entrances: A."
+        },
+        {
+            "region_id": 22,
+            "label": "ListItem",
+            "position": 21,
+            "original_bbox": [
+                380.561279296875,
+                1897.5791015625,
+                648.528076171875,
+                1933.2666015625
+            ],
+            "padded_bbox": [
+                375,
+                1892,
+                653,
+                1938
+            ],
+            "image_size": [
+                46,
+                278
+            ],
+            "ocr_text": "\u0392. Entrances :"
+        },
+        {
+            "region_id": 23,
+            "label": "ListItem",
+            "position": 22,
+            "original_bbox": [
+                381.5701904296875,
+                1940.515625,
+                600.50390625,
+                1973.97265625
+            ],
+            "padded_bbox": [
+                376,
+                1935,
+                605,
+                1978
+            ],
+            "image_size": [
+                43,
+                229
+            ],
+            "ocr_text": "Streets: \u0421."
+        },
+        {
+            "region_id": 24,
+            "label": "ListItem",
+            "position": 23,
+            "original_bbox": [
+                378.3416748046875,
+                1983.4521484375,
+                596.46826171875,
+                2016.9091796875
+            ],
+            "padded_bbox": [
+                373,
+                1978,
+                601,
+                2021
+            ],
+            "image_size": [
+                43,
+                228
+            ],
+            "ocr_text": "D Houses:"
+        },
+        {
+            "region_id": 25,
+            "label": "ListItem",
+            "position": 24,
+            "original_bbox": [
+                376.3238525390625,
+                2026.9462890625,
+                661.03857421875,
+                2060.4033203125
+            ],
+            "padded_bbox": [
+                371,
+                2021,
+                666,
+                2065
+            ],
+            "image_size": [
+                44,
+                295
+            ],
+            "ocr_text": "Fire Altars"
+        },
+        {
+            "region_id": 26,
+            "label": "Text",
+            "position": 25,
+            "original_bbox": [
+                1153.38720703125,
+                1688.19384765625,
+                1542.42333984375,
+                1722.20849609375
+            ],
+            "padded_bbox": [
+                1148,
+                1683,
+                1547,
+                1727
+            ],
+            "image_size": [
+                44,
+                399
+            ],
+            "ocr_text": "Jagat Pati Joshi 115-308"
+        },
+        {
+            "region_id": 27,
+            "label": "ListItem",
+            "position": 26,
+            "original_bbox": [
+                878.96337890625,
+                2075.458984375,
+                908.02001953125,
+                2106.685546875
+            ],
+            "padded_bbox": [
+                873,
+                2070,
+                913,
+                2111
+            ],
+            "image_size": [
+                41,
+                40
+            ],
+            "ocr_text": "                 "
+        }
+    ]
+}

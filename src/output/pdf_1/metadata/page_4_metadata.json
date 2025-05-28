@@ -1,0 +1,228 @@
+{
+    "page_number": 4,
+    "processed_date": "2025-05-28 13:50:30.217420",
+    "total_regions": 10,
+    "regions": [
+        {
+            "region_id": 1,
+            "label": "SectionHeader",
+            "position": 0,
+            "original_bbox": [
+                538.00927734375,
+                260.888671875,
+                1047.0673828125,
+                294.873046875
+            ],
+            "padded_bbox": [
+                533,
+                255,
+                1052,
+                299
+            ],
+            "image_size": [
+                44,
+                519
+            ],
+            "ocr_text": "First Editon 2015 (1000 Copies)"
+        },
+        {
+            "region_id": 2,
+            "label": "Figure",
+            "position": 1,
+            "original_bbox": [
+                601.138916015625,
+                393.75,
+                998.01123046875,
+                581.25
+            ],
+            "padded_bbox": [
+                596,
+                388,
+                1003,
+                586
+            ],
+            "image_size": [
+                198,
+                407
+            ],
+            "ocr_text": "<math>\\bf{2}</math> <math>\\mathbf{3}</math> 4",
+            "saved_path": "cropped_figures/figure_page4_region2.png"
+        },
+        {
+            "region_id": 3,
+            "label": "ListItem",
+            "position": 2,
+            "original_bbox": [
+                484.530029296875,
+                646.2890625,
+                740.265380859375,
+                674.4140625
+            ],
+            "padded_bbox": [
+                479,
+                641,
+                745,
+                679
+            ],
+            "image_size": [
+                38,
+                266
+            ],
+            "ocr_text": "1. Painted Potshera"
+        },
+        {
+            "region_id": 4,
+            "label": "ListItem",
+            "position": 3,
+            "original_bbox": [
+                487.746826171875,
+                687.3046875,
+                1119.4453125,
+                716.6015625
+            ],
+            "padded_bbox": [
+                482,
+                682,
+                1124,
+                721
+            ],
+            "image_size": [
+                39,
+                642
+            ],
+            "ocr_text": "2. Humans Skull with the Evidence of Shell Ring"
+        },
+        {
+            "region_id": 5,
+            "label": "ListItem",
+            "position": 4,
+            "original_bbox": [
+                485.736328125,
+                730.078125,
+                782.48583984375,
+                758.203125
+            ],
+            "padded_bbox": [
+                480,
+                725,
+                787,
+                763
+            ],
+            "image_size": [
+                38,
+                307
+            ],
+            "ocr_text": "3. Square Steatite Seal"
+        },
+        {
+            "region_id": 6,
+            "label": "ListItem",
+            "position": 5,
+            "original_bbox": [
+                490.5615234375,
+                770.5078125,
+                833.150390625,
+                799.8046875
+            ],
+            "padded_bbox": [
+                485,
+                765,
+                838,
+                804
+            ],
+            "image_size": [
+                39,
+                353
+            ],
+            "ocr_text": "4. Terracotta Human Head"
+        },
+        {
+            "region_id": 7,
+            "label": "Picture",
+            "position": 6,
+            "original_bbox": [
+                468.0439453125,
+                1017.7734375,
+                1118.64111328125,
+                1180.6640625
+            ],
+            "padded_bbox": [
+                463,
+                1012,
+                1123,
+                1185
+            ],
+            "image_size": [
+                173,
+                660
+            ],
+            "ocr_text": "<math>\\rm (C)</math> 2015 ARCHAEOLOGICAL SURVEY OF INDIA GOVERNMENT OF INDIA"
+        },
+        {
+            "region_id": 8,
+            "label": "Picture",
+            "position": 7,
+            "original_bbox": [
+                560.52685546875,
+                1251.7027587890625,
+                1117.03271484375,
+                1413.1787109375
+            ],
+            "padded_bbox": [
+                555,
+                1246,
+                1122,
+                1418
+            ],
+            "image_size": [
+                172,
+                567
+            ],
+            "ocr_text": "Accession No.96564Date !!! !?? 2016 <math>|c</math>cul No. <math>R950</math>: <math>|05.1951 - E</math>....."
+        },
+        {
+            "region_id": 9,
+            "label": "Text",
+            "position": 8,
+            "original_bbox": [
+                649.79296875,
+                1514.78466796875,
+                927.24169921875,
+                1551.32958984375
+            ],
+            "padded_bbox": [
+                644,
+                1509,
+                932,
+                1556
+            ],
+            "image_size": [
+                47,
+                288
+            ],
+            "ocr_text": "Price : \u20b9 1900.00"
+        },
+        {
+            "region_id": 10,
+            "label": "Text",
+            "position": 9,
+            "original_bbox": [
+                334.948974609375,
+                1963.013671875,
+                1304.4111328125,
+                2080.400390625
+            ],
+            "padded_bbox": [
+                329,
+                1958,
+                1309,
+                2085
+            ],
+            "image_size": [
+                127,
+                980
+            ],
+            "ocr_text": "Printed by: Aravali Printers & Publishers Pvt. Ltd. W-30, Okhla Industrial Area, Phase-II, New Delhi - 110020"
+        }
+    ]
+}

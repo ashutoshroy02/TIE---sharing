@@ -20,7 +20,7 @@ def render_page_to_image(page, dpi=200):
     img_bytes = pix.tobytes("ppm")
     return Image.open(BytesIO(img_bytes))
 
-def process_file(file_path, output_folder="output_pages", dpi=200, max_workers=4, save_images=True):
+def process_file(file_path, output_folder, dpi=200, max_workers=4, save_images=True):
     """
     Converts PDF pages to images and optionally saves them.
 

@@ -1,0 +1,117 @@
+{
+    "page_number": 8,
+    "processed_date": "2025-05-28 13:56:03.442916",
+    "total_regions": 5,
+    "regions": [
+        {
+            "region_id": 1,
+            "label": "Text",
+            "position": 0,
+            "original_bbox": [
+                206.625,
+                4.98046875,
+                1515.7880859375,
+                707.8125
+            ],
+            "padded_bbox": [
+                201,
+                0,
+                1520,
+                712
+            ],
+            "image_size": [
+                712,
+                1319
+            ],
+            "ocr_text": ""
+        },
+        {
+            "region_id": 2,
+            "label": "Text",
+            "position": 1,
+            "original_bbox": [
+                207.43212890625,
+                724.21875,
+                1423.775390625,
+                846.09375
+            ],
+            "padded_bbox": [
+                202,
+                719,
+                1428,
+                851
+            ],
+            "image_size": [
+                132,
+                1226
+            ],
+            "ocr_text": "<b>Contract Contract</b> "
+        },
+        {
+            "region_id": 3,
+            "label": "Text",
+            "position": 2,
+            "original_bbox": [
+                186.850341796875,
+                856.0546875,
+                1468.974609375,
+                995.5078125
+            ],
+            "padded_bbox": [
+                181,
+                851,
+                1473,
+                1000
+            ],
+            "image_size": [
+                149,
+                1292
+            ],
+            "ocr_text": ""
+        },
+        {
+            "region_id": 4,
+            "label": "Text",
+            "position": 3,
+            "original_bbox": [
+                149.31884765625,
+                1005.46875,
+                1526.28076171875,
+                1092.1875
+            ],
+            "padded_bbox": [
+                144,
+                1000,
+                1531,
+                1097
+            ],
+            "image_size": [
+                97,
+                1387
+            ],
+            "ocr_text": ""
+        },
+        {
+            "region_id": 5,
+            "label": "Text",
+            "position": 4,
+            "original_bbox": [
+                86.36279296875,
+                1241.54248046875,
+                1568.25146484375,
+                2249.435546875
+            ],
+            "padded_bbox": [
+                81,
+                1236,
+                1573,
+                2254
+            ],
+            "image_size": [
+                1018,
+                1492
+            ],
+            "ocr_text": ""
+        }
+    ]
+}

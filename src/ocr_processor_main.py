@@ -13,6 +13,8 @@ from pdf_to_pages import process_file   #returns a list of PIl images (per page)
 from models import recognition_predictor, detection_predictor, layout_predictor
 from preprocessing import preprocess_image
 import datetime
+import sys
+import os
 
 
 def extract_layout_info(layout_predictions):
@@ -139,7 +141,6 @@ def process_single_page(page_image, page_number=None):
     
     return regions
 
-
 def crop_and_save_images(image, regions, output_folder, padding=5):
     """
     Crop and save images based on detected regions.
@@ -232,7 +233,9 @@ def process_pdf(pdf_path, output_folder, padding=5):
         padding: Padding to add around cropped regions
     """
     # Convert PDF to PIL images
-    pdf_images = process_file(pdf_path)
+    pdf_images = process_file(pdf_path, output_folder)
+    print(f"Extracted {len(pdf_images)} pages from PDF: {pdf_path}")
+    print(f"Output folder: {output_folder}")
     
     if not pdf_images:
         print("No images extracted from PDF")
@@ -280,10 +283,16 @@ def process_pdf(pdf_path, output_folder, padding=5):
 
 
 if __name__ == "__main__":
-    # Example usage
-    pdf_path = r"../testing-documents/diff-pages-book.pdf"  # Replace with your PDF file path
-    output_folder = "output-try"  # Replace with your desired output folder
-    process_pdf(pdf_path, output_folder)
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.append(current_dir)
+    pdf_folder = "../testing-documents"
+    pdf_files = [f for f in os.listdir(pdf_folder) if f.lower().endswith('.pdf')]
+    print(f"Number of PDF files in '{pdf_folder}': {len(pdf_files)}")
+    for idx, pdf_file in enumerate(pdf_files, start=1):
+        pdf_path = os.path.join(pdf_folder, pdf_file)
+        output_folder = os.path.join("output", f"pdf_{idx}")
+        print(f"Processing PDF: {pdf_path}")
+        process_pdf(pdf_path, output_folder, )
 
 
 

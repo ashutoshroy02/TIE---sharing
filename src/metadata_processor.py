@@ -127,4 +127,4 @@ if __name__ == "__main__":
     # Example usage
     complete_metadata_path = "output/metadata/complete_pdf_metadata.json"  # Replace with your metadata file path
     output_folder = "output"  # Replace with your desired output folder
-    process_metadata(complete_metadata_path, output_folder) 
+    process_metadata(complete_metadata_path, output_folder)

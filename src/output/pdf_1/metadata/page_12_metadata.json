@@ -1,0 +1,602 @@
+{
+    "page_number": 12,
+    "processed_date": "2025-05-28 14:14:20.767886",
+    "total_regions": 27,
+    "regions": [
+        {
+            "region_id": 1,
+            "label": "Table",
+            "position": 0,
+            "original_bbox": [
+                113.401611328125,
+                283.30078125,
+                1431.8466796875,
+                1169.53125
+            ],
+            "padded_bbox": [
+                108,
+                278,
+                1436,
+                1174
+            ],
+            "image_size": [
+                896,
+                1328
+            ],
+            "ocr_text": "Repro Suaugraphy and Sudductures Uagai Fau UUSIII UUJ-010 <b>Situation</b> <math>1_{-}</math> Problem <math>2.</math> <math>3.</math> Layout <b>Excavation</b> <math>4.</math> 5. Stratigraphy <b>Structures</b> 6. <math>7.</math> Antiquities 8. Pottery <math>9.</math> <b>Bones</b> 10. General Observation & Chronological Horizon, Chart showing incidence of Early Harappan and Harappan pottery from KLB-3 Madhu Bala 319-420 The Pottery <math>8<sub>1</sub></math> The Inscribed Material <b>B.B.Lal</b> 421-704 9. A. General Introduction <b>B.</b> Seals (i) Introduction (ii) Steatite Seals (iii) Terracotta Seals Copper / Bronze Seal <math>(1v)</math> C. Sealings D. Other Seal-impressions E. Copper Tablet",
+            "saved_path": "cropped_tables/table_page12_region1.png"
+        },
+        {
+            "region_id": 2,
+            "label": "Text",
+            "position": 1,
+            "original_bbox": [
+                177.164794921875,
+                1166.015625,
+                537.5478515625,
+                1195.3125
+            ],
+            "padded_bbox": [
+                172,
+                1161,
+                542,
+                1200
+            ],
+            "image_size": [
+                39,
+                370
+            ],
+            "ocr_text": "F. Other Metal Objects"
+        },
+        {
+            "region_id": 3,
+            "label": "ListItem",
+            "position": 2,
+            "original_bbox": [
+                178.9808349609375,
+                1200.4095001220703,
+                523.82666015625,
+                1230.4946899414062
+            ],
+            "padded_bbox": [
+                173,
+                1195,
+                528,
+                1235
+            ],
+            "image_size": [
+                40,
+                355
+            ],
+            "ocr_text": "G. Terracotta Bangle"
+        },
+        {
+            "region_id": 4,
+            "label": "ListItem",
+            "position": 3,
+            "original_bbox": [
+                179.7879638671875,
+                1233.2304992675781,
+                594.85400390625,
+                1266.5655517578125
+            ],
+            "padded_bbox": [
+                174,
+                1228,
+                599,
+                1271
+            ],
+            "image_size": [
+                43,
+                425
+            ],
+            "ocr_text": "H. Terracotta Gamesmen"
+        },
+        {
+            "region_id": 5,
+            "label": "ListItem",
+            "position": 4,
+            "original_bbox": [
+                181.60400390625,
+                1272.072021484375,
+                595.257568359375,
+                1305.947265625
+            ],
+            "padded_bbox": [
+                176,
+                1267,
+                600,
+                1310
+            ],
+            "image_size": [
+                43,
+                424
+            ],
+            "ocr_text": "I. Terracotta Drain-pipes"
+        },
+        {
+            "region_id": 6,
+            "label": "ListItem",
+            "position": 5,
+            "original_bbox": [
+                178.1737060546875,
+                1309.153564453125,
+                342.0208740234375,
+                1343.58642578125
+            ],
+            "padded_bbox": [
+                173,
+                1304,
+                347,
+                1348
+            ],
+            "image_size": [
+                44,
+                174
+            ],
+            "ocr_text": "Potterv"
+        },
+        {
+            "region_id": 7,
+            "label": "ListItem",
+            "position": 6,
+            "original_bbox": [
+                259.08837890625,
+                1346.513916015625,
+                537.951416015625,
+                1380.249755859375
+            ],
+            "padded_bbox": [
+                254,
+                1341,
+                542,
+                1385
+            ],
+            "image_size": [
+                44,
+                288
+            ],
+            "ocr_text": "<math>(1)</math> Introductory"
+        },
+        {
+            "region_id": 8,
+            "label": "ListItem",
+            "position": 7,
+            "original_bbox": [
+                258.28125,
+                1383.037841796875,
+                830.53564453125,
+                1418.446533203125
+            ],
+            "padded_bbox": [
+                253,
+                1378,
+                835,
+                1423
+            ],
+            "image_size": [
+                45,
+                582
+            ],
+            "ocr_text": "(ii) Pottery Inscribed Before Firing"
+        },
+        {
+            "region_id": 9,
+            "label": "ListItem",
+            "position": 8,
+            "original_bbox": [
+                256.263427734375,
+                1421.234619140625,
+                800.268310546875,
+                1456.364501953125
+            ],
+            "padded_bbox": [
+                251,
+                1416,
+                805,
+                1461
+            ],
+            "image_size": [
+                45,
+                554
+            ],
+            "ocr_text": "(iii) Pottery Inscribed After Firing"
+        },
+        {
+            "region_id": 10,
+            "label": "ListItem",
+            "position": 9,
+            "original_bbox": [
+                255.052734375,
+                1458.45556640625,
+                898.33447265625,
+                1494.421875
+            ],
+            "padded_bbox": [
+                250,
+                1453,
+                903,
+                1499
+            ],
+            "image_size": [
+                46,
+                653
+            ],
+            "ocr_text": "(iv) Pottery Bearing Painted Inscription"
+        },
+        {
+            "region_id": 11,
+            "label": "ListItem",
+            "position": 10,
+            "original_bbox": [
+                178.9808349609375,
+                1494.421875,
+                766.7724609375,
+                1530.6669921875
+            ],
+            "padded_bbox": [
+                173,
+                1489,
+                771,
+                1535
+            ],
+            "image_size": [
+                46,
+                598
+            ],
+            "ocr_text": "K. Supplementary Inscribed Material"
+        },
+        {
+            "region_id": 12,
+            "label": "ListItem",
+            "position": 11,
+            "original_bbox": [
+                177.971923828125,
+                1531.7822265625,
+                1228.4501953125,
+                1566.3544921875
+            ],
+            "padded_bbox": [
+                172,
+                1526,
+                1233,
+                1571
+            ],
+            "image_size": [
+                45,
+                1061
+            ],
+            "ocr_text": "L. Scientific Studies on Fragments of the Seals (R.K.Sharma et al)"
+        },
+        {
+            "region_id": 13,
+            "label": "ListItem",
+            "position": 12,
+            "original_bbox": [
+                179.586181640625,
+                1569.42138671875,
+                1284.94921875,
+                1602.87841796875
+            ],
+            "padded_bbox": [
+                174,
+                1564,
+                1289,
+                1607
+            ],
+            "image_size": [
+                43,
+                1115
+            ],
+            "ocr_text": "M. Appendices : I and IA. List of the Indus Signs and some Variants"
+        },
+        {
+            "region_id": 14,
+            "label": "Text",
+            "position": 13,
+            "original_bbox": [
+                628.75341796875,
+                1606.78173828125,
+                1116.25927734375,
+                1641.35400390625
+            ],
+            "padded_bbox": [
+                623,
+                1601,
+                1121,
+                1646
+            ],
+            "image_size": [
+                45,
+                498
+            ],
+            "ocr_text": "respectively(after I. Mahadevan)"
+        },
+        {
+            "region_id": 15,
+            "label": "ListItem",
+            "position": 14,
+            "original_bbox": [
+                116.12567138671875,
+                1679.55078125,
+                516.966064453125,
+                1715.7958984375
+            ],
+            "padded_bbox": [
+                111,
+                1674,
+                521,
+                1720
+            ],
+            "image_size": [
+                46,
+                410
+            ],
+            "ocr_text": "10. Crafts at Kalibangan"
+        },
+        {
+            "region_id": 16,
+            "label": "Text",
+            "position": 15,
+            "original_bbox": [
+                1036.353515625,
+                1683.4541015625,
+                1428.6181640625,
+                1719.1416015625
+            ],
+            "padded_bbox": [
+                1031,
+                1678,
+                1433,
+                1724
+            ],
+            "image_size": [
+                46,
+                402
+            ],
+            "ocr_text": "Jagat Pati Joshi 705-722"
+        },
+        {
+            "region_id": 17,
+            "label": "ListItem",
+            "position": 16,
+            "original_bbox": [
+                260.70263671875,
+                1717.46875,
+                525.44091796875,
+                1754.271484375
+            ],
+            "padded_bbox": [
+                255,
+                1712,
+                530,
+                1759
+            ],
+            "image_size": [
+                47,
+                275
+            ],
+            "ocr_text": "1. <b>Agriculture</b>"
+        },
+        {
+            "region_id": 18,
+            "label": "ListItem",
+            "position": 17,
+            "original_bbox": [
+                260.5008544921875,
+                1756.22314453125,
+                706.23779296875,
+                1791.07421875
+            ],
+            "padded_bbox": [
+                255,
+                1751,
+                711,
+                1796
+            ],
+            "image_size": [
+                45,
+                456
+            ],
+            "ocr_text": "2. House-building activity"
+        },
+        {
+            "region_id": 19,
+            "label": "ListItem",
+            "position": 18,
+            "original_bbox": [
+                254.649169921875,
+                1791.07421875,
+                620.278564453125,
+                1825.646484375
+            ],
+            "padded_bbox": [
+                249,
+                1786,
+                625,
+                1830
+            ],
+            "image_size": [
+                44,
+                376
+            ],
+            "ocr_text": "-3. Carpenter's Craft"
+        },
+        {
+            "region_id": 20,
+            "label": "ListItem",
+            "position": 19,
+            "original_bbox": [
+                258.4830322265625,
+                1826.76171875,
+                552.88330078125,
+                1861.333984375
+            ],
+            "padded_bbox": [
+                253,
+                1821,
+                557,
+                1866
+            ],
+            "image_size": [
+                45,
+                304
+            ],
+            "ocr_text": "4. Potter's Craft"
+        },
+        {
+            "region_id": 21,
+            "label": "ListItem",
+            "position": 20,
+            "original_bbox": [
+                257.070556640625,
+                1863.0068359375,
+                573.465087890625,
+                1897.5791015625
+            ],
+            "padded_bbox": [
+                252,
+                1858,
+                578,
+                1902
+            ],
+            "image_size": [
+                44,
+                326
+            ],
+            "ocr_text": "5. Cobbler's Craft"
+        },
+        {
+            "region_id": 22,
+            "label": "ListItem",
+            "position": 21,
+            "original_bbox": [
+                255.052734375,
+                1900.3671875,
+                682.8310546875,
+                1936.0546875
+            ],
+            "padded_bbox": [
+                250,
+                1895,
+                687,
+                1941
+            ],
+            "image_size": [
+                46,
+                437
+            ],
+            "ocr_text": "6. Ivory and Bone Crafts"
+        },
+        {
+            "region_id": 23,
+            "label": "ListItem",
+            "position": 22,
+            "original_bbox": [
+                257.070556640625,
+                1937.7275390625,
+                654.985107421875,
+                1972.2998046875
+            ],
+            "padded_bbox": [
+                252,
+                1932,
+                659,
+                1977
+            ],
+            "image_size": [
+                45,
+                407
+            ],
+            "ocr_text": "<math>\\mathbf{7}</math> Bead-maker's Craft"
+        },
+        {
+            "region_id": 24,
+            "label": "ListItem",
+            "position": 23,
+            "original_bbox": [
+                255.456298828125,
+                1973.4150390625,
+                649.335205078125,
+                2009.1025390625
+            ],
+            "padded_bbox": [
+                250,
+                1968,
+                654,
+                2014
+            ],
+            "image_size": [
+                46,
+                404
+            ],
+            "ocr_text": "Lithic Tool Industry 8."
+        },
+        {
+            "region_id": 25,
+            "label": "ListItem",
+            "position": 24,
+            "original_bbox": [
+                256.6669921875,
+                2008.544921875,
+                566.200927734375,
+                2044.232421875
+            ],
+            "padded_bbox": [
+                251,
+                2003,
+                571,
+                2049
+            ],
+            "image_size": [
+                46,
+                320
+            ],
+            "ocr_text": "Shell Industry 9."
+        },
+        {
+            "region_id": 26,
+            "label": "ListItem",
+            "position": 25,
+            "original_bbox": [
+                259.08837890625,
+                2046.462890625,
+                570.64013671875,
+                2081.03515625
+            ],
+            "padded_bbox": [
+                254,
+                2041,
+                575,
+                2086
+            ],
+            "image_size": [
+                45,
+                321
+            ],
+            "ocr_text": "10. <b>Weaver's Craft</b>"
+        },
+        {
+            "region_id": 27,
+            "label": "TextInlineMath",
+            "position": 26,
+            "original_bbox": [
+                759.50830078125,
+                2102.7822265625,
+                781.30078125,
+                2129.5478515625
+            ],
+            "padded_bbox": [
+                754,
+                2097,
+                786,
+                2134
+            ],
+            "image_size": [
+                37,
+                32
+            ],
+            "ocr_text": "             "
+        }
+    ]
+}

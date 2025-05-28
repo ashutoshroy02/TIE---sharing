@@ -1,0 +1,117 @@
+{
+    "page_number": 13,
+    "processed_date": "2025-05-28 14:16:14.269269",
+    "total_regions": 5,
+    "regions": [
+        {
+            "region_id": 1,
+            "label": "SectionHeader",
+            "position": 0,
+            "original_bbox": [
+                631.698486328125,
+                234.66796875,
+                1012.48681640625,
+                273.6328125
+            ],
+            "padded_bbox": [
+                626,
+                229,
+                1017,
+                278
+            ],
+            "image_size": [
+                49,
+                391
+            ],
+            "ocr_text": "<b>LIST OF FIGURES</b>"
+        },
+        {
+            "region_id": 2,
+            "label": "PageHeader",
+            "position": 1,
+            "original_bbox": [
+                1388.85205078125,
+                370.8984375,
+                1469.27197265625,
+                400.1953125
+            ],
+            "padded_bbox": [
+                1383,
+                365,
+                1474,
+                405
+            ],
+            "image_size": [
+                40,
+                91
+            ],
+            "ocr_text": ""
+        },
+        {
+            "region_id": 3,
+            "label": "TableOfContents",
+            "position": 2,
+            "original_bbox": [
+                162.4482421875,
+                448.2421875,
+                1480.53076171875,
+                2044.962890625
+            ],
+            "padded_bbox": [
+                157,
+                443,
+                1485,
+                2049
+            ],
+            "image_size": [
+                1606,
+                1328
+            ],
+            "ocr_text": "Chapter 1 Introduction and a Summary of the Results <math>\\overline{2}</math> Fig. <math>1.1</math> : Map showing location of Kalibangan Chaper 2 Some thoughts on the now - Dry River on whose bank stands the site of Kalibangan 12 Fig. 2.1 : The Sarasvati Basin in the 3rd Millennium BCE 13 : Lower Sindh and Kachchha in the 3rd Millennium BCE Fig. 2.2 (After Louis Flam 1999) Fig. 2.3 : Drainage Pattern of the Vedic Sarasvati in the Himalayas 16 (After Puri and Verma 1998) Fig. <math>2.4</math> : Appearance of Bata-Markanda Divide 18 (After Puri and Verma 1998) Fig. 2.5 : General view of boring platform for hydrological 19 investigations Fig. <math>2.6</math> : Map showing a correlation between the Rigvedic area and 21 the spread of the Harappan Civilization, in the <math>3<sup>rd</sup></math> millennium BCE The Chronological Horizon Chapter 3 Chapter 4 The Harappan settlement at Kalibangan - An overview Fig. 4.1 28 Kalibangan : Contour plan showing archaeological areas Fig. <math>4.2</math> Kalibangan: General view showing KLB-1 and KLB-2 mounds 29 Fig. 4.3 Kalibangan: General view showing KLB-1 and KLB-2 mounds 29 Fig. 4.4 31 Kalibangan: Conjectural view, Harappan Settlement Chapter 5 KLB-1 Stratigraphy and Structures Fig. <math>5.1</math> KLB-1: Trench ZG-9 and ZH-9, section across fortification 35 wall, section looking north Fig. <math>5.2</math> KLB-1: Trench XJ-1, XE1 to E-1, section looking north 37 Fig. 5.3 KLB-1: Trench ZB-10, section of street, section looking south 39 Fig. <math>5.4</math> KLB-1 : Trench ZD-2 and ZD-3, Harappan fortification wall, section looking west 41 Fig. <math>5.5</math> KLB-1: Trench ZE-4 and ZF-4, section looking north 42 Fig. 5.6 KLB-1 : Concordance of Harappan strata 43 Fig. 5.7 KLB-1 : Citadel 45"
+        },
+        {
+            "region_id": 4,
+            "label": "Text",
+            "position": 3,
+            "original_bbox": [
+                177.5269775390625,
+                1194.7265625,
+                866.12255859375,
+                1201.171875
+            ],
+            "padded_bbox": [
+                172,
+                1189,
+                871,
+                1206
+            ],
+            "image_size": [
+                17,
+                699
+            ],
+            "ocr_text": "_______________________________________ _______________________________________"
+        },
+        {
+            "region_id": 5,
+            "label": "TextInlineMath",
+            "position": 5,
+            "original_bbox": [
+                803.797119140625,
+                2063.2353515625,
+                829.12939453125,
+                2089.8134765625
+            ],
+            "padded_bbox": [
+                798,
+                2058,
+                834,
+                2094
+            ],
+            "image_size": [
+                36,
+                36
+            ],
+            "ocr_text": "           "
+        }
+    ]
+}
