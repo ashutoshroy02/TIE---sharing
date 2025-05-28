@@ -233,53 +233,56 @@ def process_pdf(pdf_path, output_folder, padding=5):
         padding: Padding to add around cropped regions
     """
     # Convert PDF to PIL images
-    pdf_images = process_file(pdf_path, output_folder)
-    print(f"Extracted {len(pdf_images)} pages from PDF: {pdf_path}")
-    print(f"Output folder: {output_folder}")
-    
-    if not pdf_images:
-        print("No images extracted from PDF")
-        return
-    
-    # Intialize the List to store metadata for all pages of the pdf
-    all_pages_metadata = []
-    
-    # Process each page
-    for page_num, page_image in enumerate(pdf_images, start=1):
-        print(f"\nProcessing page {page_num}")
+    try:
+        pdf_images = process_file(pdf_path, output_folder)
+        print(f"Extracted {len(pdf_images)} pages from PDF: {pdf_path}")
+        print(f"Output folder: {output_folder}")
         
-        # Process page (layout + OCR)
-        regions = process_single_page(page_image, page_num)
-        if not regions:
-            print(f"No regions detected on page {page_num}")
-            continue
-
-        # Crop and save images based on regions
-        crop_and_save_images(page_image, regions, output_folder, padding)
+        if not pdf_images:
+            print("No images extracted from PDF")
+            return
         
-        # Read the page metadata that was just saved
-        metadata_path = os.path.join(output_folder, 'metadata', f'page_{page_num}_metadata.json')
-        if os.path.exists(metadata_path):
-            with open(metadata_path, 'r') as f:
-                page_metadata = json.load(f)
-                all_pages_metadata.append(page_metadata)
-    
+        # Intialize the List to store metadata for all pages of the pdf
+        all_pages_metadata = []
+        
+        # Process each page
+        for page_num, page_image in enumerate(pdf_images, start=1):
+            print(f"\nProcessing page {page_num}")
+            
+            # Process page (layout + OCR)
+            regions = process_single_page(page_image, page_num)
+            if not regions:
+                print(f"No regions detected on page {page_num}")
+                continue
 
-    # Create and save complete PDF metadata
-    complete_metadata = {
-        'pdf_path': pdf_path,
-        'total_pages': len(all_pages_metadata),
-        'processed_date': str(datetime.datetime.now()),
-        'total_regions': sum(page['total_regions'] for page in all_pages_metadata),
-        'pages': all_pages_metadata
-    }
-    
-    
-    # Save complete PDF metadata
-    complete_metadata_path = os.path.join(output_folder, 'metadata', 'complete_pdf_metadata.json')
-    with open(complete_metadata_path, 'w') as f:
-        json.dump(complete_metadata, f, indent=4)
-    print(f"Saved complete PDF metadata to: {complete_metadata_path}")
+            # Crop and save images based on regions
+            crop_and_save_images(page_image, regions, output_folder, padding)
+            
+            # Read the page metadata that was just saved
+            metadata_path = os.path.join(output_folder, 'metadata', f'page_{page_num}_metadata.json')
+            if os.path.exists(metadata_path):
+                with open(metadata_path, 'r') as f:
+                    page_metadata = json.load(f)
+                    all_pages_metadata.append(page_metadata)
+        
+
+        # Create and save complete PDF metadata
+        complete_metadata = {
+            'pdf_path': pdf_path,
+            'total_pages': len(all_pages_metadata),
+            'processed_date': str(datetime.datetime.now()),
+            'total_regions': sum(page['total_regions'] for page in all_pages_metadata),
+            'pages': all_pages_metadata
+        }
+        
+        
+        # Save complete PDF metadata
+        complete_metadata_path = os.path.join(output_folder, 'metadata', 'complete_pdf_metadata.json')
+        with open(complete_metadata_path, 'w') as f:
+            json.dump(complete_metadata, f, indent=4)
+        print(f"Saved complete PDF metadata to: {complete_metadata_path}")
+    except Exception as e:
+        print(f"Error processing PDF {pdf_path}: {e}")
 
 
 if __name__ == "__main__":

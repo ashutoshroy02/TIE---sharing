@@ -22,7 +22,9 @@ def separate_metadata_by_type(complete_metadata: Dict[str, Any], output_folder: 
         'total_pages': complete_metadata['total_pages'],
         'processed_date': str(datetime.datetime.now()),
         'total_regions': 0,
-        'pages': []
+        'pages': [],
+        'caption': None,
+        'description': []
     }
     
     tables_metadata = {
@@ -31,7 +33,9 @@ def separate_metadata_by_type(complete_metadata: Dict[str, Any], output_folder: 
         'total_pages': complete_metadata['total_pages'],
         'processed_date': str(datetime.datetime.now()),
         'total_regions': 0,
-        'pages': []
+        'pages': [],
+        'caption': None,
+        'description': []
     }
     
     figures_metadata = {
@@ -40,7 +44,9 @@ def separate_metadata_by_type(complete_metadata: Dict[str, Any], output_folder: 
         'total_pages': complete_metadata['total_pages'],
         'processed_date': str(datetime.datetime.now()),
         'total_regions': 0,
-        'pages': []
+        'pages': [],
+        'caption': None,
+        'description': []
     }
     
     # Process each page
@@ -116,15 +122,24 @@ def process_metadata(complete_metadata_path: str, output_folder: str) -> None:
         complete_metadata_path: Path to the complete PDF metadata JSON file
         output_folder: Directory to save the separated metadata files
     """
-    # Read the complete metadata
-    with open(complete_metadata_path, 'r') as f:
-        complete_metadata = json.load(f)
-    
-    # Separate and save the metadata
-    separate_metadata_by_type(complete_metadata, output_folder)
+    try:
+        # Read the complete metadata
+        with open(complete_metadata_path, 'r') as f:
+            complete_metadata = json.load(f)
+        
+        # Separate and save the metadata
+        separate_metadata_by_type(complete_metadata, output_folder)
+    except Exception as e:
+        print(f"Error processing metadata file '{complete_metadata_path}': {e}")
 
 if __name__ == "__main__":
     # Example usage
-    complete_metadata_path = "output/metadata/complete_pdf_metadata.json"  # Replace with your metadata file path
     output_folder = "output"  # Replace with your desired output folder
-    process_metadata(complete_metadata_path, output_folder)
+    folders = [name for name in os.listdir(output_folder) if os.path.isdir(os.path.join(output_folder, name))]
+    print("Folders inside output_folder:", folders)
+    for folder in folders:
+        complete_metadata_path = os.path.join(output_folder, folder, "metadata", "complete_pdf_metadata.json")
+        if os.path.exists(complete_metadata_path):
+            process_metadata(complete_metadata_path, os.path.join(output_folder, folder))
+        else:
+            print(f"Metadata file not found for folder: {folder}")
