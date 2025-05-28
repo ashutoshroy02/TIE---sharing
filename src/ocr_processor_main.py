@@ -82,64 +82,68 @@ def process_single_page(page_image, page_number=None):
         page_image: The page image to process
         page_number: The page number (optional)
     """
-    # Check if page_image is already a PIL Image
-    if not isinstance(page_image, Image.Image):
-        # Convert to PIL format if it's a numpy array
-        pil_image = Image.fromarray(page_image)
-    else:
-        pil_image = page_image        #PIL image
-    
-    # Get layout predictions
-    layout_predictions = layout_predictor([pil_image])      #applying surya layout model  
-    
-    # Convert PIL image to numpy array for processing
-    if isinstance(page_image, Image.Image):
-        page_image = np.array(page_image)           #numpy image 
-    
-    # Process the page layout
-    regions = process_page_layout(page_image, layout_predictions)
-    
-    # Add page number to each region
-    for region in regions:
-        region['page_number'] = page_number
-    
-    # Process OCR for all regions at once
-    results = {}
-    for i, region in enumerate(regions):
-        region_id = f"region_{i}"
-        region_type = region['label'].lower()
-        bbox = region['bbox']
-        
-        # Extract the region from the original image
-        x1, y1, x2, y2 = [int(coord) for coord in bbox]
-        region_image = page_image[y1:y2, x1:x2]
-        
-        # Preprocess the region image  (numpy array)
-        preprocessed_region = preprocess_image(region_image)
-        
-        # Convert preprocessed region to PIL Image for Surya OCR
-        region_pil = Image.fromarray(preprocessed_region)
-        
-        # Get OCR predictions for the region
-        region_predictions = recognition_predictor([region_pil], ['ocr_with_boxes'], detection_predictor)
-        
-        # Extract text from predictions
-        text = ""
-        if region_predictions and region_predictions[0].text_lines:
-            text = " ".join([line.text.strip() for line in region_predictions[0].text_lines])
-        
-        # Store the result
-        results[region_id] = {
-            'type': region_type,
-            'bbox': bbox,
-            'position': region.get('position', i),
-            'content': text
-        }
-        
-        # Add OCR text directly to the region
-        region['ocr_text'] = text
-    
-    return regions
+    try:
+        # Check if page_image is already a PIL Image
+        if not isinstance(page_image, Image.Image):
+            # Convert to PIL format if it's a numpy array
+            pil_image = Image.fromarray(page_image)
+        else:
+            pil_image = page_image        #PIL image
+
+        # Get layout predictions
+        layout_predictions = layout_predictor([pil_image])      #applying surya layout model  
+
+        # Convert PIL image to numpy array for processing
+        if isinstance(page_image, Image.Image):
+            page_image = np.array(page_image)           #numpy image 
+
+        # Process the page layout
+        regions = process_page_layout(page_image, layout_predictions)
+
+        # Add page number to each region
+        for region in regions:
+            region['page_number'] = page_number
+
+        # Process OCR for all regions at once
+        results = {}
+        for i, region in enumerate(regions):
+            region_id = f"region_{i}"
+            region_type = region['label'].lower()
+            bbox = region['bbox']
+
+            # Extract the region from the original image
+            x1, y1, x2, y2 = [int(coord) for coord in bbox]
+            region_image = page_image[y1:y2, x1:x2]
+
+            # Preprocess the region image  (numpy array)
+            preprocessed_region = preprocess_image(region_image)
+
+            # Convert preprocessed region to PIL Image for Surya OCR
+            region_pil = Image.fromarray(preprocessed_region)
+
+            # Get OCR predictions for the region
+            region_predictions = recognition_predictor([region_pil], ['ocr_with_boxes'], detection_predictor)
+
+            # Extract text from predictions
+            text = ""
+            if region_predictions and region_predictions[0].text_lines:
+                text = " ".join([line.text.strip() for line in region_predictions[0].text_lines])
+
+            # Store the result
+            results[region_id] = {
+                'type': region_type,
+                'bbox': bbox,
+                'position': region.get('position', i),
+                'content': text
+            }
+
+            # Add OCR text directly to the region
+            region['ocr_text'] = text
+
+        return regions
+    except Exception as e:
+        print(f"Error processing page {page_number}: {e}")
+        return []
 
 def crop_and_save_images(image, regions, output_folder, padding=5):
     """
