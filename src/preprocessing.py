@@ -4,10 +4,6 @@ Does not work for Shadow pages. if the page has a little shadow it darkens it ve
 
 import cv2
 import numpy as np
-# from pdf_to_pages import process_file 
-
-import cv2
-import numpy as np
 
 
 def preprocess_image(image):
@@ -17,6 +13,15 @@ def preprocess_image(image):
     else:
         # Convert PIL Image to OpenCV format
         img = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+    
+    # Check if image is empty or has invalid dimensions
+    if img is None or img.size == 0 or len(img.shape) != 3:
+        # Return a blank image with same dimensions as input
+        if isinstance(image, np.ndarray):
+            return np.zeros_like(image)
+        else:
+            # If input was PIL Image, create a blank image with same size
+            return np.zeros((image.height, image.width), dtype=np.uint8)
     
     # denoised =  cv2.fastNlMeansDenoisingColored(img, None, 10, 10, 7, 20)
     denoised  = cv2.bilateralFilter(img, 9, 75, 75)    #use any one if :: for higher qaulity for pages use this else use above
@@ -33,10 +38,34 @@ def preprocess_image(image):
     return pdf_page
 
 
+
+
+
+
+
+
+
+
+
+
+
 # # file_path = r'book2-120-125.pdf' 
 # file_path = r"Z:\TO DO\codes\IIT\ashu\model_output\original dataset\two column and table.png"
 # pages = process_file(file_path)
 # preprocessed_pages = [preprocess_image(page) for page in pages]
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
