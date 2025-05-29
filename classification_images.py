@@ -66,10 +66,8 @@ def calculate_accuracy(predictions, ground_truth, classes):
 
 def classify_images(image_paths, model, preprocess, device, ground_truth=None):
     # Define classes and threshold
-    classes = ['map', 'photo', 'layout']
-    fallback_class = 'figure'
-    confidence_threshold = 0.5
-    results = {class_name: [] for class_name in classes + [fallback_class]}
+    classes = ['map', 'photograph', 'site layout', 'figure']
+    results = {class_name: [] for class_name in classes}
     total_images = len(image_paths)
     
     # Lists to store predictions and ground truth for accuracy calculation
@@ -89,16 +87,8 @@ def classify_images(image_paths, model, preprocess, device, ground_truth=None):
                 
                 # Get index of the highest probability
                 max_prob_index = np.argmax(probs)
-                highest_prob_class = classes[max_prob_index]
-                highest_confidence = float(probs[max_prob_index])
-                
-                # Apply confidence threshold for fallback classification
-                if highest_confidence >= confidence_threshold:
-                    predicted_class = highest_prob_class
-                    confidence = highest_confidence
-                else:
-                    predicted_class = fallback_class
-                    confidence = highest_confidence
+                predicted_class = classes[max_prob_index]
+                confidence = float(probs[max_prob_index])
                 
                 result = {
                     "filename": os.path.basename(image_path),
@@ -162,8 +152,8 @@ def save_results(results, metadata_dir):
         print(f"\nResults for {class_name} saved to {output_file}")
 
 def main():
-    print("CLIP Image Classifier (map, photo, layout, figure)")
-    print("Note: Images will be classified as 'figure' if confidence is below 0.5")
+    print("CLIP Image Classifier (map, photograph, site layout, figure)")
+    print("Note: Images will be classified based on the highest predicted probability among the four classes.")
     
     # Setup metadata directory
     metadata_dir = setup_metadata_directory()
@@ -189,16 +179,16 @@ def main():
     ground_truth = None
     
     if calculate_accuracy_flag:
-        print("\nEnter ground truth labels for each image (map/photo/layout/figure):")
+        print("\nEnter ground truth labels for each image (map/image/layout/figure):")
         ground_truth = []
-        valid_labels = ['map', 'photo', 'layout', 'figure']
+        valid_labels = ['map', 'photograph', 'site layout', 'figure']
         for image_path in image_paths:
             while True:
                 label = input(f"Label for {os.path.basename(image_path)} ({'/'.join(valid_labels)}): ").strip().lower()
                 if label in valid_labels:
                     ground_truth.append(label)
                     break
-                print("Invalid label. Please enter one of the valid labels: map, photo, layout, figure.")
+                print("Invalid label. Please enter one of the valid labels: map, image, layout, figure.")
     
     # Setup CLIP model
     device = "cuda" if torch.cuda.is_available() else "cpu"
