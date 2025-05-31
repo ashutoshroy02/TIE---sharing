@@ -4,7 +4,7 @@ Does not work for Shadow pages. if the page has a little shadow it darkens it ve
 
 import cv2
 import numpy as np
-
+from pdf_to_pages import process_file
 
 def preprocess_image(image):
     # Check if input is already numpy array
@@ -48,14 +48,12 @@ def preprocess_image(image):
 
 
 
-
-# # file_path = r'book2-120-125.pdf' 
-# file_path = r"Z:\TO DO\codes\IIT\ashu\model_output\original dataset\two column and table.png"
-# pages = process_file(file_path)
-# preprocessed_pages = [preprocess_image(page) for page in pages]
-
-
-
+# if __name__ == "__main__":
+#     output_folder = 'output'
+#     pages = process_file(r'page_6.png',output_folder)
+#     image = preprocess_image(pages)
+#     import cv2
+#     cv2.imwrite(f"haha/after.png",image)
 
 
 
@@ -69,86 +67,5 @@ def preprocess_image(image):
 
 
 
-"""# Display the original pages
-from PIL import Image
-for idx, page in enumerate(pages):
-    print(f"Displaying page {idx+1}")
-    page.show()
-    input("Press Enter to continue to the next page...")"""
 
 
-"""
-# Display the preprocessed pages
-from PIL import Image
-for idx, preprocessed_page in enumerate(preprocessed_pages):
-    print(f"Displaying preprocessed page {idx+1}")
-    # Convert OpenCV image (numpy array) back to PIL Image for display
-    pil_img = Image.fromarray(preprocessed_page)
-    pil_img.show()
-    input("Press Enter to continue to the next preprocessed page...")"""
-
-
-
-##to test
-'''##with pdf as file
-# Load the pages from the PDF
-# file_path = r'book2-120-125.pdf' 
-# preprocessed_pages = [preprocess_image(page) for page in pages]
-# for idx, img in enumerate(preprocessed_pages):
-    # pil_img = Image.fromarray(img)
-    # pil_img.show(title=f"Page {idx+1}")
-    # input() '''
-
-
-'''##with image as file
-# file_path = r"Z:\TO DO\codes\IIT\ashu\model_output\original dataset\heading and two cloumn.png"
-#from PIL import Image
-# img = cv2.cvtColor(np.array(file_path), cv2.COLOR_RGB2BGR)
-# Image.fromarray(img).show()
-'''
-
-'''##with folder of images to test
-import os
-current_path = os.getcwd()
-folder_path = os.path.join(current_path, 'model_output', 'original dataset')
-files_path = [os.path.join(folder_path, file) for file in os.listdir(folder_path)]
-
-all_pages = []
-for i in files_path:
-    pages = process_file(i)
-    all_pages.extend(pages)
-
-preprocessed_pages = [preprocess_image(i) for i in all_pages]
-
-#display image
-from PIL import Image
-for idx, img in enumerate(preprocessed_pages):
-    pil_img = Image.fromarray(img)
-    pil_img.show(title=f"Page {idx+1}")
-    input("enter for next page)
-'''
-
-
-#SAVE IN A FOLDER
-'''import os
-from PIL import Image
-current_path = os.getcwd()
-folder_path = os.path.join(current_path, 'model_output', 'original dataset')
-files_path = [os.path.join(folder_path, file) for file in os.listdir(folder_path)]
-
-all_pages = []
-for i in files_path:
-    pages = process_file(i)
-    all_pages.extend(pages)
-
-preprocessed_pages = [preprocess_image(i) for i in all_pages]
-
-if not os.path.exists(os.path.join(current_path,'model_output', 'after_preprocessing')):
-     os.makedirs(os.path.join(current_path,'model_output', 'after_preprocessing'))
-
-for i, img in enumerate(preprocessed_pages):
-    if isinstance(img, np.ndarray):
-        img = Image.fromarray(img)
-    img_path =os.path.join(current_path,'model_output', 'after_preprocessing', f"page_{i+1}.png")
-    img.save(img_path)
-    print(f"Saved: {img_path}")'''
