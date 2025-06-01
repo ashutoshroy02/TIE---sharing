@@ -23,7 +23,7 @@ Here are two sample images used for classification:
 
 ### 🖼️ Map Image (`1.png`)
 
-![Map Image](sample_images/1.png)
+![Map Image](sample_images/images (35).jpg)
 
 ### 🗺️ Photograph Image (`2.png`)
 
