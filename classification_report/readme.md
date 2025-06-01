@@ -31,7 +31,7 @@ Here are two sample images used for classification:
 
 ### 🖼️ Site layout Image (`1.png`)
 
-![Site Layout Image](sample_images/1.png)
+![Site Layout Image](sample_images/images (211).jpg)
 
 ### 🗺️ Figure Image (`2.png`)
 
