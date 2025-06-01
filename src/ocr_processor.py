@@ -17,6 +17,7 @@ from preprocessing import preprocess_image
 import datetime
 import sys
 import os
+from text_correct import generate_description, ocr_text_correction
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 # from img2table.ocr.surya import SuryaOCR
 # from img2table.document import Image as Docimage
@@ -59,6 +60,9 @@ def process_page_layout(page_image, layout_predictions):   #convert python synta
     layout_info = extract_layout_info(layout_predictions)
      #output format      [{'label': 'Picture', 'position': 0, 'bbox': [141.2578125, 259.641357421875, 3322.921875, 1130.37890625]}, {'label': 'Text', 'position': 1, 'bbox': [361.97314453125, 1207.28759765625, 3124.48828125, 2053.283203125]}, {'label': 'Text', 'position': 3, 'bbox': [355.6669921875, 1981.740234375, 1697.6162109375, 3299.91943359375]}, {'label': 'Text', 'position': 5, 'bbox': [1750.587890625, 2131.38427734375, 3095.900390625, 2429.47998046875]}, {'label': 'Text', 'position': 7, 'bbox': [351.462890625, 3393.521484375, 1705.18359375, 4071.538818359375]}, {'label': 'Text', 'position': 8, 'bbox': [1735.453125, 2450.048583984375, 3100.9453125, 4055.79150390625]}, {'label': 'ListItem', 'position': 11, 'bbox': [352.3037109375, 4204.35107421875, 3080.765625, 4322.01025390625]}, {'label': 'ListItem', 'position': 12, 'bbox': [351.252685546875, 4324.9814453125, 849.228515625, 4386.7822265625]}]
     
+    # Sort by position to maintain reading order
+    layout_info.sort(key=lambda x: x['position'])
+    
     try:
         regions = []
         for element in layout_info:
@@ -78,13 +82,7 @@ def process_page_layout(page_image, layout_predictions):   #convert python synta
         print(f"Error in process_page_layout: {e}")
         return []
 
-def ocr_text_correction(text):
-    corrected_ocr_text = ''
-    
-    #apply logic or llm model
-    
-    corrected_ocr_text = text
-    return corrected_ocr_text
+
 
 def process_single_page(page_image, page_number=None, padding = 5):
     """
@@ -113,7 +111,10 @@ def process_single_page(page_image, page_number=None, padding = 5):
 
         # Process the page layout
         regions = process_page_layout(page_image, layout_predictions)  #image in numpy goes as input  #output in json(metadata) from layout predictions(python syntax)
- 
+
+        # Add page number to each region
+        for region in regions:
+            region['page_number'] = page_number
 
         # Process OCR for all regions at once
         results = {}
@@ -167,7 +168,11 @@ def process_single_page(page_image, page_number=None, padding = 5):
             # print(text)
             
             #ocr correction via llm
-            # text = ocr_text_correction()
+            # try:
+            #     text = ocr_text_correction(text)  # from text_correct.py
+            # except Exception as e:
+            #     print(f"OCR correction failed: {e}")
+            #     # Optionally, keep the original text or set to empty
             
             
             # Store the result
@@ -186,13 +191,15 @@ def process_single_page(page_image, page_number=None, padding = 5):
         print(f"Error processing page {page_number}: {e}")
         return []
 
-def find_caption(region,image):
-    from process_layout import run_processing
-    run_processing(image)
-    
+def find_caption(image):
+    # from layout_model import process_pil_image
+    # result = process_pil_image(image, output_format='json')
+    # print(result)
+    # regions = data['regions']
+    # return regions
+    pass
   
-
-def crop_and_save_images(image, regions, output_folder, padding=5):
+def crop_and_save_images(image, regions, output_folder, padding=5, page_url=None):
     """
     Crop and save images based on detected regions.
 
@@ -213,11 +220,12 @@ def crop_and_save_images(image, regions, output_folder, padding=5):
     os.makedirs(output_folder_metadata, exist_ok=True)
     
     # Get page number from the first region
-    page_number = regions[0].get('position') if regions else None
+    page_number = regions[0].get('page_number') if regions else None
 
     # Dictionary to store metadata for this page
     page_metadata = {
-        'page_number': page_number+1,
+        'page_number': page_number,
+        'page_url': page_url,
         'total_regions': len(regions),
         'regions': []
     }
@@ -252,18 +260,27 @@ def crop_and_save_images(image, regions, output_folder, padding=5):
             'captions' : region.get('captions', '')
 
         }
+#--------------------------------------------------------------------------------------------------
 
         # Generate description for images and tables
         if label.lower() in ['image', 'table', 'picture', 'figure']:
             # Get all regions above (with lower position), sorted by position (top to bottom)
-            prev_regions = [r for r in regions if r['position'] < position]
-            prev_regions_sorted = sorted(prev_regions, key=lambda r: r['position'])
-            # Concatenate their OCR text in order
-            description_texts = [r.get('ocr_text', '') for r in prev_regions_sorted]
-            description = " ".join(description_texts)
+            # prev_regions = [r for r in regions if r['position'] < position]
+            # prev_regions_sorted = sorted(prev_regions, key=lambda r: r['position'])
+            # # Concatenate their OCR text in order
+            # description_texts = [r.get('ocr_text', '') for r in prev_regions_sorted]
+            # description = " ".join(description_texts)
+            try:
+                description = generate_description(region_metadata['ocr_text'])
+        
+            except Exception as e:
+                description = region_metadata['ocr_text']
+                
             region_metadata['description'] = description
         else:
             region_metadata['description'] = ""
+
+#--------------------------------------------------------------------------------------------------
 
 
         if label.lower() == 'table':
@@ -282,6 +299,7 @@ def crop_and_save_images(image, regions, output_folder, padding=5):
 
         page_metadata['regions'].append(region_metadata)
 
+    # print(page_metadata)
     return page_metadata
 
 def process_pdf(pdf_path, output_folder, padding=7):
@@ -296,10 +314,10 @@ def process_pdf(pdf_path, output_folder, padding=7):
     """
     # Convert PDF to PIL images
     try:
-        pdf_images = process_file(pdf_path, output_folder)    #pdf_iamges is list of PIL image   [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=3444x4880 at 0x7FF14736B800>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=3444x4880 at 0x7FF114802B40> ]
-        print(f"Extracted {len(pdf_images)} pages from PDF: {pdf_path}")
+        pdf_images_and_urls = process_file(pdf_path, output_folder)    #pdf_iamges is list of PIL image   [<PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=3444x4880 at 0x7FF14736B800>, <PIL.PpmImagePlugin.PpmImageFile image mode=RGB size=3444x4880 at 0x7FF114802B40> ]
+        print(f"Extracted {len(pdf_images_and_urls)} pages from PDF: {pdf_path}")
         
-        if not pdf_images:
+        if not pdf_images_and_urls:
             print("No images extracted from PDF")
             return
         
@@ -307,7 +325,7 @@ def process_pdf(pdf_path, output_folder, padding=7):
         all_pages_metadata = []
         
         # Process each page
-        for page_num, page_image in enumerate(pdf_images, start=1):
+        for page_num, (page_image, page_url) in enumerate(pdf_images_and_urls, start=1):
             print(f"\nProcessing page {page_num}")
             
             # Process page (layout + OCR)
@@ -316,16 +334,20 @@ def process_pdf(pdf_path, output_folder, padding=7):
             # print(regions)
             
             #add caption in region
-            # regions = find_caption(regions, page_image:PIL format)
-            
+            # regions = find_caption(page_image)
+            # print(regions)
             if not regions:
                 print(f"No regions detected on page {page_num}")
                 continue
 
+
+
+
             # Crop and save images based on regions and get metadata
-            page_metadata = crop_and_save_images(page_image, regions, output_folder, padding)
+            page_metadata = crop_and_save_images(page_image, regions, output_folder, padding, page_url=page_url)
+            # print(page_metadata)
             all_pages_metadata.append(page_metadata)
-        
+        # print(all_pages_metadata)
 
         # Create and save complete PDF metadata
         complete_metadata = {
@@ -334,7 +356,7 @@ def process_pdf(pdf_path, output_folder, padding=7):
             'total_regions': sum(page['total_regions'] for page in all_pages_metadata),
             'pages': all_pages_metadata
         }
-        
+        print(complete_metadata)
         
         # Save complete PDF metadata
         complete_metadata_path = os.path.join(
@@ -348,18 +370,4 @@ def process_pdf(pdf_path, output_folder, padding=7):
 
 
 if __name__ == "__main__":
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    sys.path.append(current_dir)
-    #pdf_folder = "../testing-documents"
-    #pdf_folder = "/mnt/storage/nivedita/pdf_corpus_2"
-    pdf_folder = "/home/nivedita/night_test"    
-    pdf_files = [f for f in os.listdir(pdf_folder) if f.lower().endswith('1.png')]
-    print(f"Number of PDF files in '{pdf_folder}': {len(pdf_files)}")
-    for idx, pdf_file in enumerate(pdf_files, start=1):
-        #code for pdf file
-        pdf_path = os.path.join(pdf_folder, pdf_file)
-        pdf_basename = os.path.splitext(os.path.basename(pdf_path))[0]
-        output_folder = os.path.join("Result", pdf_basename)
-        #main process
-        print(f"Processing PDF: {pdf_path}")
-        process_pdf(pdf_path, output_folder, )
+    pass
