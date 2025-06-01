@@ -27,7 +27,7 @@ Here are two sample images used for classification:
 
 ### 🗺️ Photograph Image (`2.png`)
 
-![Photograph Image](sample_images/2.png)
+![Photograph Image](sample_images/images (118).jpg)
 
 ### 🖼️ Site layout Image (`1.png`)
 
