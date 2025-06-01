@@ -35,7 +35,7 @@ Here are two sample images used for classification:
 
 ### 🗺️ Figure Image (`2.png`)
 
-![figure Image](sample_images/2.png)
+![figure Image](sample_images/000009.jpg)
 
 
 These images are used for testing the classifier and should be correctly identified as `figure` and `map` respectively.
