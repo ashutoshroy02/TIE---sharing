@@ -11,12 +11,12 @@ import cv2
 import json
 import io
 from typing import Dict, List, Any, Tuple, Union
-from pdf_to_pages import process_file   #returns a list of PIl images (per page) object for the pdf 
+from pdf_to_pages import process_file    #returns a list of PIl images (per page) object for the pdf 
 from models import recognition_predictor, detection_predictor, layout_predictor
 from preprocessing import preprocess_image
-import datetime
 import sys
 import os
+from caption import process_page_for_captions
 from text_correct import generate_description, ocr_text_correction
 # sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 # from img2table.ocr.surya import SuryaOCR
@@ -81,7 +81,6 @@ def process_page_layout(page_image, layout_predictions):   #convert python synta
     except Exception as e:
         print(f"Error in process_page_layout: {e}")
         return []
-
 
 
 def process_single_page(page_image, page_number=None, padding = 5):
@@ -182,7 +181,6 @@ def process_single_page(page_image, page_number=None, padding = 5):
                 'position': region.get('position', i),
                 'content': text
             }
-
             # Add OCR text directly to the region
             region['ocr_text'] = text
 
@@ -190,14 +188,7 @@ def process_single_page(page_image, page_number=None, padding = 5):
     except Exception as e:
         print(f"Error processing page {page_number}: {e}")
         return []
-
-def find_caption(image):
-    # from layout_model import process_pil_image
-    # result = process_pil_image(image, output_format='json')
-    # print(result)
-    # regions = data['regions']
-    # return regions
-    pass
+ 
   
 def crop_and_save_images(image, regions, output_folder, padding=5, page_url=None):
     """
@@ -261,22 +252,7 @@ def crop_and_save_images(image, regions, output_folder, padding=5, page_url=None
             'description': region.get('description', '')
 
         }
-#--------------------------------------------------------------------------------------------------
 
-        # # Generate description for images and tables
-        # if label.lower() in ['image', 'table', 'picture', 'figure']:
-        #     try:
-       
-        #         description = generate_description(page_metadata)
-        
-        #     except Exception as e:
-        #         description = region_metadata['ocr_text']
-                
-        #     region_metadata['description'] = description
-        # else:
-        #     region_metadata['description'] = ""
-
-#--------------------------------------------------------------------------------------------------
 
 
         if label.lower() == 'table':
@@ -284,19 +260,20 @@ def crop_and_save_images(image, regions, output_folder, padding=5, page_url=None
             table_image_path = os.path.join('cropped_tables', f"table_page{page_number}_region{idx+1}.png")
             cv2.imwrite(os.path.join(output_folder_tables, f"table_page{page_number}_region{idx+1}.png"), cropped_image)
             region_metadata['saved_path'] = table_image_path
-            print(f"Saved table image: {table_image_path}")
+            # print(f"Saved table image: {table_image_path}")
             
         elif label.lower() in ['figure', 'image', 'picture']:
             # Save cropped figure images
             figure_image_path = os.path.join('cropped_figures', f"figure_page{page_number}_region{idx+1}.png")
             cv2.imwrite(os.path.join(output_folder_figures, f"figure_page{page_number}_region{idx+1}.png"), cropped_image)
             region_metadata['saved_path'] = figure_image_path
-            print(f"Saved figure image: {figure_image_path}")
+            # print(f"Saved figure image: {figure_image_path}")
 
         page_metadata['regions'].append(region_metadata)
 
     # print(page_metadata)
     return page_metadata
+
 
 def process_pdf(pdf_path, output_folder, padding=7):
     """
@@ -328,15 +305,15 @@ def process_pdf(pdf_path, output_folder, padding=7):
             regions = process_single_page(page_image, page_num, padding = 5)
             #format for regions ocr       [{'label': 'Picture', 'position': 0, 'bbox': (141.2578125, 259.641357421875, 3322.921875, 1130.37890625), 'page_number': 1, 'ocr_text': 'INTRODUCTION AND H 90.69 A SUMMARY OF THE RESULTS $ B.B. LAL'}, {'label': 'Text', 'position': 1, 'bbox': (361.97314453125, 1207.28759765625, 3124.48828125, 2053.283203125), 'page_number': 1, 'ocr_text': "A lthough in the earlier report on the recent environmental change has come <b>Thexequations at Kalibangan we had up because of the canal that has been</b> given a detailed account of the location laid out in the dry bed of the Ghaggar of the site and its environment, it may (Sarasvati). Likewise, one can well imagine not be out of place here to recall some of that during the Harappan times when the mighty Sarasvati itself was flowing past it, since we don't expect the readers to remember all that; and perhaps some of the site the environment must have been no less green. Indeed, the discovery of a them may not have even seen the earlier ploughed field with criss-cross furrow report.<sup>1</sup> marks, ascribable to the Early Harappan times,<sup>2</sup> fully endorses such a view. Located on the left bank of the now-"}, {'label': 'Text', 'position': 3, 'bbox': (355.6669921875, 1981.740234375, 1697.6162109375, 3299.91943359375), 'page_number': 1, 'ocr_text': "Located on the left bank of the now- dry Ghaggar (ancient Sarasvati) river in Hanumangarh District of Rajasthan, Kalibangan (Lat. 29<sup>0</sup> 29' N; Long. 74<sup>°</sup> 08' E) is one of the most important sites excavated on the Indian side of the border after Independence. As would be seen a little later, it has made some very valuable contributions to our knowledge of the Harappan Civilization (also known as the Indus/Indus-Sarasvatî Civilization). The site is about 6 km south of the nearest railway station, called Pilibangan, which lies between Hanumangarh and Suratgarh. From Delhi, it is a little over 300 km by road in a north-westerly direction (cf. Fig. 1.1)."}, {'label': 'Text', 'position': 5, 'bbox': (1750.587890625, 2131.38427734375, 3095.900390625, 2429.47998046875), 'page_number': 1, 'ocr_text': 'The ancient site consists of three mounds (Fig. 4.1). Of these, the one in the middle (called KLB-2) is the largest, though it has been badly eroded on the'}, {'label': 'Text', 'position': 7, 'bbox': (351.462890625, 3393.521484375, 1705.18359375, 4071.538818359375), 'page_number': 1, 'ocr_text': 'As one moves in this area, one sees during the winter season luscious fields of wheat interspersed with those of mustard, the latter welcoming the visitor by waving their lovely yellow flowers. But all this is a recent development. In the 1950s when we were exploring the area we were greeted by nothing but sand, often swirling up in the air and blinding us. The'}, {'label': 'Text', 'position': 8, 'bbox': (1735.453125, 2450.048583984375, 3100.9453125, 4055.79150390625), 'page_number': 1, 'ocr_text': 'southern side. It measures approximately 240m east-west and seems to have been not less than 360m north-south. That on the west (called KLB-1) measures roughly 240m north-south and 120m east-west. As would have been observed, the longer axis in both the cases is north-south, i.e. almost at right angles to the adjacent river, which is somewhat unusual, since normally habitations stretch along the river. Anyway, both the mounds rise to a height of approximately 10m above the surrounding plains. The third mound, named KLB-3, is a bit away to the east of KLB-2 and is very much smaller in area, approximately 70m x 50m, and only 2.5m in height. The reason for this small size of the last-named mound lies in the fact that it was not a residential complex but was used only for a limited (ritualistic) purpose.'}, {'label': 'ListItem', 'position': 11, 'bbox': (352.3037109375, 4204.35107421875, 3080.765625, 4322.01025390625), 'page_number': 1, 'ocr_text': 'B.B. Lal, J.P. Joshi et al. 2003, Excavations at Kalibangan: The Early Harappans, New Delhi: Archaeological Survey of India.'}, {'label': 'ListItem', 'position': 12, 'bbox': (351.252685546875, 4324.9814453125, 849.228515625, 4386.7822265625), 'page_number': 1, 'ocr_text': '<i>Ibid.</i>, pp. 95-98.'}]
             
-            #add caption in region
-            # regions = find_caption(page_image)
             if not regions:
                 print(f"No regions detected on page {page_num}")
                 continue
 
             # Crop and save images based on regions and get metadata
-            page_metadata = crop_and_save_images(page_image, regions, output_folder, padding, page_url=page_url)
-            page_metadata = generate_description(page_metadata)
+            page_metadata = crop_and_save_images(page_image, regions, output_folder, padding, page_url=page_url)  #make page metadata with regions
+            page_metadata = generate_description(page_metadata)       #with description
+            # print(page_metadata)
+            page_metadata = process_page_for_captions(page_metadata,page_num)   #with caption
             # print(page_metadata)
             all_pages_metadata.append(page_metadata)
         # print(all_pages_metadata)
@@ -359,7 +336,6 @@ def process_pdf(pdf_path, output_folder, padding=7):
         print(f"Saved complete PDF metadata to: {complete_metadata_path}")
     except Exception as e:
         print(f"Error processing PDF {pdf_path}: {e}")
-
 
 if __name__ == "__main__":
     pass
