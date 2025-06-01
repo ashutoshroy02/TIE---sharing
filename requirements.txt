@@ -2,3 +2,9 @@ surya-ocr
 pdf2image
 python-magic
 PyMuPDF
+torch
+PIL (Pillow)
+tkinter
+clip
+numpy
+scikit-learn
