@@ -41,6 +41,8 @@ def process_file(file_path, output_folder, process_dpi=200, save_dpi=75, max_wor
 
     if save_images:
         os.makedirs(output_folder, exist_ok=True)
+        pages_folder = os.path.join(output_folder, 'pages')
+        os.makedirs(pages_folder, exist_ok=True)
 
     doc = fitz.open(file_path)
     # Render images at process_dpi
@@ -52,7 +54,7 @@ def process_file(file_path, output_folder, process_dpi=200, save_dpi=75, max_wor
         # Resize and save images at save_dpi
         scale_factor = save_dpi / process_dpi
         for i, img in enumerate(images):
-            output_path = os.path.join(output_folder, f"page_{i+1}.png")
+            output_path = os.path.join(output_folder, 'pages', f"page_{i+1}.png")
             # Resize the image to save_dpi before saving
             new_size = (int(img.width * scale_factor), int(img.height * scale_factor))
             resized_img = img.resize(new_size, Image.Resampling.LANCZOS) # Using LANCZOS filter for quality
@@ -64,4 +66,5 @@ def process_file(file_path, output_folder, process_dpi=200, save_dpi=75, max_wor
 
     # Return list of (image, page_url) tuples
     return list(zip(images, page_urls))
+
 
