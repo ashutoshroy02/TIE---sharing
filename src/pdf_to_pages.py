@@ -7,6 +7,7 @@
 
 '''  (DPI ∝ bbox coordinates)   '''
 
+
 import fitz  # PyMuPDF
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
@@ -20,39 +21,47 @@ def render_page_to_image(page, dpi=200):
     img_bytes = pix.tobytes("ppm")
     return Image.open(BytesIO(img_bytes))
 
-def process_file(file_path, output_folder="output_pages", dpi=200, max_workers=4, save_images=True):
+
+def process_file(file_path, output_folder, process_dpi=200, save_dpi=75, max_workers=4, save_images=True):
     """
     Converts PDF pages to images and optionally saves them.
+    Uses process_dpi for the returned PIL images and save_dpi for saved images.
 
     Args:
         file_path (str): Path to PDF file.
         output_folder (str): Folder to save images if enabled.
-        dpi (int): DPI for image quality.
+        process_dpi (int): DPI for the returned PIL Image objects.
+        save_dpi (int): DPI for saving images (resizes from process_dpi).
         max_workers (int): Number of threads for processing.
         save_images (bool): Enable or disable saving images.
 
     Returns:
-        list: List of PIL Image objects.
+        list: List of (PIL Image, page_url) tuples.
     """
+
     if save_images:
         os.makedirs(output_folder, exist_ok=True)
-    
+
     doc = fitz.open(file_path)
+    # Render images at process_dpi
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        images = list(executor.map(lambda page: render_page_to_image(page, dpi), doc))
-    
+        images = list(executor.map(lambda page: render_page_to_image(page, process_dpi), doc))
+
+    page_urls = []
     if save_images:
+        # Resize and save images at save_dpi
+        scale_factor = save_dpi / process_dpi
         for i, img in enumerate(images):
             output_path = os.path.join(output_folder, f"page_{i+1}.png")
-            img.save(output_path)
-            print(f"Saved page {i+1} to {output_path}")
-    
-    print(f"Processed {len(images)} pages{' and saved them' if save_images else ''}.")
-    return images
+            # Resize the image to save_dpi before saving
+            new_size = (int(img.width * scale_factor), int(img.height * scale_factor))
+            resized_img = img.resize(new_size, Image.Resampling.LANCZOS) # Using LANCZOS filter for quality
+            resized_img.save(output_path)
+            page_urls.append(output_path)
+    else:
+        # If not saving, you can still provide a logical name or None
+        page_urls = [None] * len(images)
 
-if __name__ == "__main__":
-    pdf_path = r"testing-pdf\book2 (2).pdf"
-    output_folder = "output_pages"
-    images = process_file(pdf_path, output_folder=output_folder, dpi=150, max_workers=4, save_images=True)
-    print(f"Total {len(images)} pages processed.")
-    # print(images)
+    # Return list of (image, page_url) tuples
+    return list(zip(images, page_urls))
+
