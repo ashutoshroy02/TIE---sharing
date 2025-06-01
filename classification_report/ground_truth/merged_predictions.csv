@@ -1,0 +1,401 @@
+filename,predicted_label,actual_label
+000003.jpg,figure,figure
+000005.jpg,figure,figure
+000006.jpg,figure,figure
+000008.jpg,figure,figure
+000009.jpg,figure,figure
+000010.jpg,figure,figure
+000012.jpg,figure,figure
+000015.jpg,figure,figure
+000017.jpg,figure,figure
+000018.jpg,figure,figure
+000019.jpg,figure,figure
+000022.jpg,figure,figure
+000028.jpg,figure,figure
+000030.jpg,figure,figure
+000036.jpg,figure,figure
+000037.jpg,figure,figure
+000038.jpg,figure,figure
+000048.jpg,figure,figure
+000054.jpg,figure,figure
+000055.jpg,figure,figure
+000056.jpg,figure,figure
+000060.jpg,figure,figure
+000063.jpg,figure,figure
+000066.jpg,figure,figure
+000068.jpg,figure,figure
+000074.jpg,figure,figure
+000075.jpg,figure,figure
+000080.jpg,figure,photograph
+000081.jpg,figure,figure
+000083.jpg,figure,figure
+000087.jpg,figure,figure
+000088.jpg,figure,figure
+000093.jpg,figure,figure
+000095.jpg,figure,figure
+000098.jpg,figure,figure
+000100.jpg,figure,figure
+download (17).jpg,figure,figure
+download (21).jpg,figure,photograph
+images (106).jpg,figure,photograph
+images (110).jpg,figure,photograph
+images (65).jpg,figure,photograph
+images (87).jpg,figure,photograph
+region_5.png,figure,photograph
+region_9.png,figure,photograph
+000029.jpg,map,map
+000032.jpg,map,map
+000035.jpg,map,map
+000043.jpg,map,figure
+000052.jpg,map,map
+000073.jpg,map,map
+000079.jpg,map,photograph
+120px-บ้านเค็ม.jpg,map,map
+"2025_Romanian_presidential_election,_II_Round (1).jpg",map,map
+"2025_Romanian_presidential_election,_II_Round.jpg",map,map
+download (10).jpg,map,map
+download (11).jpg,map,map
+download (12).jpg,map,map
+download (13).jpg,map,map
+download (14).jpg,map,map
+download (15).jpg,map,map
+download (16).jpg,map,map
+download (18).jpg,map,map
+download (19).jpg,map,map
+download (2).jpg,map,map
+download (3).jpg,map,map
+download (37).jpg,map,map
+download (38).jpg,map,map
+download (4).jpg,map,map
+download (40).jpg,map,map
+download (41).jpg,map,map
+download (42).jpg,map,map
+download (43).jpg,map,map
+download (48).jpg,map,map
+download (5).jpg,map,map
+download (6).jpg,map,map
+download (7).jpg,map,map
+download (8).jpg,map,map
+download (9).jpg,map,map
+download.jpg,map,map
+Fishing_fleet_in_European_Union.jpg,map,map
+images (1).jpg,map,map
+images (10).jpg,map,map
+images (11).jpg,map,map
+images (12).jpg,map,map
+images (13).jpg,map,map
+images (14).jpg,map,map
+images (142).jpg,map,map
+images (143).jpg,map,map
+images (144).jpg,map,map
+images (15).jpg,map,map
+images (150).jpg,map,map
+images (156).jpg,map,map
+images (16).jpg,map,map
+images (167).jpg,map,map
+images (17).jpg,map,map
+images (171).jpg,map,map
+images (173).jpg,map,map
+images (174).jpg,map,map
+images (177).jpg,map,map
+images (178).jpg,map,map
+images (18).jpg,map,map
+images (180).jpg,map,map
+images (185).jpg,map,map
+images (189).jpg,map,map
+images (19).jpg,map,map
+images (192).jpg,map,map
+images (194).jpg,map,map
+images (195).jpg,map,map
+images (196).jpg,map,map
+images (198).jpg,map,map
+images (2).jpg,map,map
+images (20).jpg,map,map
+images (200).jpg,map,map
+images (201).jpg,map,map
+images (202).jpg,map,map
+images (21).jpg,map,map
+images (210).jpg,map,map
+images (212).jpg,map,map
+images (22).jpg,map,map
+images (23).jpg,map,map
+images (24).jpg,map,map
+images (25).jpg,map,map
+images (26).jpg,map,map
+images (27).jpg,map,map
+images (28).jpg,map,map
+images (29).jpg,map,map
+images (3).jpg,map,map
+images (30).jpg,map,map
+images (31).jpg,map,map
+images (32).jpg,map,map
+images (33).jpg,map,map
+images (34).jpg,map,map
+images (35).jpg,map,map
+images (36).jpg,map,map
+images (37).jpg,map,map
+images (38).jpg,map,map
+images (39).jpg,map,map
+images (4).jpg,map,figure
+images (40).jpg,map,map
+images (41).jpg,map,map
+images (42).jpg,map,map
+images (43).jpg,map,map
+images (44).jpg,map,map
+images (45).jpg,map,map
+images (46).jpg,map,map
+images (47).jpg,map,map
+images (48).jpg,map,map
+images (49).jpg,map,map
+images (5).jpg,map,map
+images (50).jpg,map,map
+images (51).jpg,map,map
+images (52).jpg,map,map
+images (53).jpg,map,map
+images (54).jpg,map,map
+images (55).jpg,map,map
+images (56).jpg,map,map
+images (57).jpg,map,map
+images (58).jpg,map,map
+images (59).jpg,map,map
+images (60).jpg,map,map
+images (61).jpg,map,map
+images (7).jpg,map,map
+images (8).jpg,map,map
+images (9).jpg,map,map
+images - 2025-05-29T185147.741.jpg,map,map
+images - 2025-05-29T185153.654.jpg,map,map
+images - 2025-05-29T185203.032.jpg,map,map
+images - 2025-05-29T185212.532.jpg,map,map
+images - 2025-05-29T185222.983.jpg,map,map
+images - 2025-05-29T185248.849.jpg,map,map
+images - 2025-05-29T185258.929.jpg,map,map
+images - 2025-05-29T185306.337.jpg,map,map
+images - 2025-05-29T185346.208.jpg,map,map
+Ararat_Republic_on_the_map.png,map,map
+download (1).png,map,map
+download.png,map,map
+File_00000000be1462468dabd1d64991da1b.png,map,map
+images (1).png,map,map
+images (2).png,map,map
+images (3).png,map,map
+000033.jpg,photograph,photograph
+000059.jpg,photograph,photograph
+000076.jpg,photograph,photograph
+000084.jpg,photograph,photograph
+download (20).jpg,photograph,photograph
+download (22).jpg,photograph,photograph
+download (23).jpg,photograph,photograph
+download (24).jpg,photograph,photograph
+download (25).jpg,photograph,photograph
+download (27).jpg,photograph,photograph
+download (28).jpg,photograph,photograph
+download (29).jpg,photograph,photograph
+download (30).jpg,photograph,photograph
+download (34).jpg,photograph,photograph
+download (35).jpg,photograph,photograph
+download (36).jpg,photograph,photograph
+images (100).jpg,photograph,photograph
+images (101).jpg,photograph,photograph
+images (105).jpg,photograph,photograph
+images (108).jpg,photograph,photograph
+images (109).jpg,photograph,photograph
+images (111).jpg,photograph,photograph
+images (112).jpg,photograph,photograph
+images (114).jpg,photograph,photograph
+images (116).jpg,photograph,photograph
+images (117).jpg,photograph,photograph
+images (118).jpg,photograph,photograph
+images (119).jpg,photograph,photograph
+images (120).jpg,photograph,photograph
+images (125).jpg,photograph,photograph
+images (128).jpg,photograph,photograph
+images (129).jpg,photograph,photograph
+images (130).jpg,photograph,photograph
+images (131).jpg,photograph,photograph
+images (132).jpg,photograph,photograph
+images (133).jpg,photograph,photograph
+images (134).jpg,photograph,photograph
+images (135).jpg,photograph,photograph
+images (136).jpg,photograph,photograph
+images (137).jpg,photograph,photograph
+images (67).jpg,photograph,photograph
+images (68).jpg,photograph,photograph
+images (69).jpg,photograph,photograph
+images (70).jpg,photograph,photograph
+images (74).jpg,photograph,photograph
+images (75).jpg,photograph,photograph
+images (78).jpg,photograph,photograph
+images (81).jpg,photograph,photograph
+images (83).jpg,photograph,photograph
+images (85).jpg,photograph,photograph
+images (86).jpg,photograph,photograph
+images (88).jpg,photograph,photograph
+images (90).jpg,photograph,photograph
+images (91).jpg,photograph,photograph
+images (92).jpg,photograph,photograph
+images (95).jpg,photograph,photograph
+images (96).jpg,photograph,photograph
+images.jpg,photograph,photograph
+region_11.png,photograph,photograph
+region_2.png,photograph,photograph
+region_7.png,photograph,photograph
+000001.jpg,site layout,figure
+000002.jpg,site layout,figure
+000004.jpg,site layout,figure
+000007.jpg,site layout,figure
+000011.jpg,site layout,figure
+000013.jpg,site layout,figure
+000014.jpg,site layout,figure
+000016.jpg,site layout,site layout
+000020.jpg,site layout,figure
+000021.jpg,site layout,site layout
+000023.jpg,site layout,photograph
+000024.jpg,site layout,site layout
+000025.jpg,site layout,site layout
+000026.jpg,site layout,figure
+000027.jpg,site layout,figure
+000031.jpg,site layout,site layout
+000034.jpg,site layout,site layout
+000039.jpg,site layout,site layout
+000040.jpg,site layout,site layout
+000041.jpg,site layout,site layout
+000042.jpg,site layout,figure
+000044.jpg,site layout,photograph
+000045.jpg,site layout,site layout
+000046.jpg,site layout,site layout
+000047.jpg,site layout,site layout
+000049.jpg,site layout,figure
+000050.jpg,site layout,site layout
+000051.jpg,site layout,site layout
+000053.jpg,site layout,site layout
+000057.jpg,site layout,figure
+000058.jpg,site layout,site layout
+000061.jpg,site layout,site layout
+000062.jpg,site layout,photograph
+000064.jpg,site layout,figure
+000065.jpg,site layout,figure
+000067.jpg,site layout,photograph
+000069.jpg,site layout,site layout
+000070.jpg,site layout,site layout
+000071.jpg,site layout,site layout
+000072.jpg,site layout,site layout
+000077.jpg,site layout,site layout
+000078.jpg,site layout,figure
+000082.jpg,site layout,site layout
+000085.jpg,site layout,site layout
+000086.jpg,site layout,site layout
+000089.jpg,site layout,figure
+000090.jpg,site layout,figure
+000091.jpg,site layout,site layout
+000092.jpg,site layout,figure
+000094.jpg,site layout,photograph
+000096.jpg,site layout,photograph
+000097.jpg,site layout,site layout
+000099.jpg,site layout,photograph
+download (1).jpg,site layout,map
+download (26).jpg,site layout,photograph
+download (31).jpg,site layout,photograph
+download (32).jpg,site layout,photograph
+download (33).jpg,site layout,photograph
+download (39).jpg,site layout,site layout
+download (44).jpg,site layout,site layout
+download (45).jpg,site layout,site layout
+download (46).jpg,site layout,site layout
+download (47).jpg,site layout,site layout
+download (49).jpg,site layout,site layout
+download (50).jpg,site layout,site layout
+download (51).jpg,site layout,site layout
+images (102).jpg,site layout,site layout
+images (103).jpg,site layout,site layout
+images (104).jpg,site layout,photograph
+images (107).jpg,site layout,photograph
+images (113).jpg,site layout,photograph
+images (115).jpg,site layout,photograph
+images (121).jpg,site layout,photograph
+images (122).jpg,site layout,site layout
+images (123).jpg,site layout,site layout
+images (124).jpg,site layout,site layout
+images (126).jpg,site layout,photograph
+images (127).jpg,site layout,photograph
+images (138).jpg,site layout,photograph
+images (139).jpg,site layout,site layout
+images (140).jpg,site layout,site layout
+images (141).jpg,site layout,site layout
+images (145).jpg,site layout,site layout
+images (146).jpg,site layout,site layout
+images (147).jpg,site layout,site layout
+images (148).jpg,site layout,site layout
+images (149).jpg,site layout,site layout
+images (151).jpg,site layout,site layout
+images (152).jpg,site layout,site layout
+images (153).jpg,site layout,site layout
+images (154).jpg,site layout,site layout
+images (155).jpg,site layout,site layout
+images (157).jpg,site layout,site layout
+images (158).jpg,site layout,site layout
+images (159).jpg,site layout,site layout
+images (160).jpg,site layout,site layout
+images (161).jpg,site layout,site layout
+images (162).jpg,site layout,site layout
+images (163).jpg,site layout,site layout
+images (164).jpg,site layout,site layout
+images (165).jpg,site layout,site layout
+images (166).jpg,site layout,site layout
+images (168).jpg,site layout,site layout
+images (169).jpg,site layout,site layout
+images (170).jpg,site layout,site layout
+images (172).jpg,site layout,site layout
+images (175).jpg,site layout,site layout
+images (176).jpg,site layout,site layout
+images (179).jpg,site layout,site layout
+images (181).jpg,site layout,site layout
+images (182).jpg,site layout,site layout
+images (183).jpg,site layout,site layout
+images (184).jpg,site layout,site layout
+images (186).jpg,site layout,site layout
+images (187).jpg,site layout,site layout
+images (188).jpg,site layout,site layout
+images (190).jpg,site layout,site layout
+images (191).jpg,site layout,site layout
+images (193).jpg,site layout,site layout
+images (197).jpg,site layout,site layout
+images (199).jpg,site layout,site layout
+images (203).jpg,site layout,site layout
+images (204).jpg,site layout,site layout
+images (205).jpg,site layout,site layout
+images (206).jpg,site layout,site layout
+images (207).jpg,site layout,site layout
+images (208).jpg,site layout,site layout
+images (209).jpg,site layout,site layout
+images (211).jpg,site layout,site layout
+images (213).jpg,site layout,site layout
+images (214).jpg,site layout,site layout
+images (6).jpg,site layout,site layout
+images (62).jpg,site layout,photograph
+images (63).jpg,site layout,site layout
+images (64).jpg,site layout,site layout
+images (66).jpg,site layout,site layout
+images (71).jpg,site layout,site layout
+images (72).jpg,site layout,photograph
+images (73).jpg,site layout,site layout
+images (76).jpg,site layout,site layout
+images (77).jpg,site layout,photograph
+images (79).jpg,site layout,site layout
+images (80).jpg,site layout,photograph
+images (82).jpg,site layout,photograph
+images (84).jpg,site layout,photograph
+images (89).jpg,site layout,site layout
+images (93).jpg,site layout,photograph
+images (94).jpg,site layout,site layout
+images (97).jpg,site layout,photograph
+images (98).jpg,site layout,photograph
+images (99).jpg,site layout,photograph
+download (2).png,site layout,site layout
+images (10).png,site layout,site layout
+images (4).png,site layout,site layout
+images (5).png,site layout,site layout
+images (6).png,site layout,site layout
+images (7).png,site layout,site layout
+images (8).png,site layout,site layout
+images (9).png,site layout,site layout
