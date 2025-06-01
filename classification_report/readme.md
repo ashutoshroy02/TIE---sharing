@@ -23,15 +23,15 @@ Here are two sample images used for classification:
 
 ### 🖼️ Map Image (`1.png`)
 
-![Map Image](sample_images/images (35).jpg)
+![Map Image](sample_images/images35.jpg)
 
 ### 🗺️ Photograph Image (`2.png`)
 
-![Photograph Image](sample_images/images (118).jpg)
+![Photograph Image](sample_images/images118.jpg)
 
 ### 🖼️ Site layout Image (`1.png`)
 
-![Site Layout Image](sample_images/images (211).jpg)
+![Site Layout Image](sample_images/images211.jpg)
 
 ### 🗺️ Figure Image (`2.png`)
 
