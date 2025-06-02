@@ -7,8 +7,22 @@ This Python script uses OpenAI's CLIP model to classify images into one of the f
 - **Site Layout**
 - **Figure**
 
-It also supports accuracy evaluation using ground truth labels and saves detailed metadata for each classification run.
+### 📊 Classification Report
 
+| Class        | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| Figure       | 0.818     | 0.632  | 0.713    | 57      |
+| Map          | 0.978     | 0.993  | 0.985    | 134     |
+| Photograph   | 1.000     | 0.616  | 0.762    | 99      |
+| Site Layout  | 0.692     | 1.000  | 0.818    | 110     |
+| **Accuracy** |           |        | **0.850**| **—**   |
+
+> **Overall Accuracy:** 85%
+Tested the model on 400 images of four classes(map, photograph, site layout, figure) 
+
+100 images from each classes downloaded from google [Archeological Maps, Archeological Photograph, Archeological Site Layout, Archeological Figures(Deawings)] 
+
+![Confusion Matrix](sample_images/images35.jpg)
 ---
 
 ## 📦 Features
