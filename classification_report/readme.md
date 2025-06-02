@@ -22,7 +22,7 @@ Tested the model on 400 images of four classes(map, photograph, site layout, fig
 
 100 images from each classes downloaded from google [Archeological Maps, Archeological Photograph, Archeological Site Layout, Archeological Figures(Deawings)] 
 
-![Confusion Matrix](sample_images/images35.jpg)
+![Confusion Matrix](sample_images/Figure_1.png)
 ---
 
 ## 📦 Features
