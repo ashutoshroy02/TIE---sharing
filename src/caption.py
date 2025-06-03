@@ -93,6 +93,7 @@ def process_page_for_captions(page, page_num):
     caption_candidates = []
 
 
+
     for region in regions:
         text = region.get('ocr_text', '').strip()
         label = region.get('label', '')
@@ -103,7 +104,26 @@ def process_page_for_captions(page, page_num):
             # print(f"→ Caption matched by regex: '{text}'")
             match = re.search(r'([A-Za-z]\.?\s*\d+(\.\d+)*)', text)
             if match:
-                # print("Caption: ", text)
+                print("Caption: ", text)
+                caption_candidates.append({
+                    'text': text,
+                    'bbox': region.get('padded_bbox') or region.get('bbox'),
+                    'position': region.get('position', 0)
+                })
+        '''else:
+            # Fallback caption
+            if label in ['figure', 'image', 'Picture', 'fig','Figure', 'Picture']:
+                fallback_caption = 'Figure:'
+            elif label in ['table', 'tbl', 'Table']:
+                fallback_caption = 'Table:'
+            elif label == ['Map', 'map', 'Image']:
+                fallback_caption = 'Map:'
+            else:
+                fallback_caption = None
+
+            if fallback_caption:
+                caption_text = f"{fallback_caption} (page: {page_num})"
+                # print(f"→ Using fallback caption: '{caption_text}' for label='{label}'")
                 caption_candidates.append({
                     'text': text,
                     'bbox': region.get('padded_bbox') or region.get('bbox'),
