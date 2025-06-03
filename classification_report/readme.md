@@ -11,18 +11,19 @@ This Python script uses OpenAI's CLIP model to classify images into one of the f
 
 | Class        | Precision | Recall | F1-Score | Support |
 |--------------|-----------|--------|----------|---------|
-| Figure       | 0.818     | 0.632  | 0.713    | 57      |
-| Map          | 0.978     | 0.993  | 0.985    | 134     |
-| Photograph   | 1.000     | 0.616  | 0.762    | 99      |
-| Site Layout  | 0.692     | 1.000  | 0.818    | 110     |
+| Figure       | 0.818     | 0.621  | 0.706    | 58.00   |
+| Map          | 0.985     | 0.985  | 0.985    | 136.00  |
+| Photograph   | 0.985     | 0.634  | 0.771    | 101.00  |
+| Site Layout  | 0.689     | 1.000  | 0.816    | 111.00  |
 | **Accuracy** |           |        | **0.850**| **—**   |
 
 > **Overall Accuracy:** 85%
-Tested the model on 400 images of four classes(map, photograph, site layout, figure) 
 
-100 images from each classes downloaded from google [Archeological Maps, Archeological Photograph, Archeological Site Layout, Archeological Figures(Deawings)] 
+Tested the model on 408 images with these following classes(map, photograph, site layout, figure) 
 
-![Confusion Matrix](sample_images/Figure_1.png)
+102 images from each classes downloaded from google [Archeological Maps, Archeological Photograph, Archeological Site Layout, Archeological Figures(Drawings)] 
+
+![Confusion Matrix](sample_images/Figure_408.png)
 ---
 
 ## 📦 Features
@@ -52,6 +53,5 @@ Here are two sample images used for classification:
 ![figure Image](sample_images/000009.jpg)
 
 
-These images are used for testing the classifier and should be correctly identified as `map`, 'photograph', 'site layout' and 'figure'.
 
 
