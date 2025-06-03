@@ -7,7 +7,9 @@ import glob
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(current_dir)
 
-pdf_folder = "/mnt/storage/nivedita/final_corpus"
+#pdf_folder = "/mnt/storage/nivedita/final_corpus"
+pdf_folder = "../testing-documents"  # Change this to your PDF folder path
+print(pdf_folder)
 
 # pdf_folder = "/home/nivedita/night_test"    
 pdf_files = [f for f in os.listdir(pdf_folder) if f.lower().endswith('.pdf')]
@@ -26,7 +28,8 @@ if __name__ == "__main__":
         for pdf_file in pdf_files:
             pdf_path = os.path.join(pdf_folder, pdf_file)
             pdf_basename = os.path.splitext(os.path.basename(pdf_path))[0]
-            output_folder = os.path.join('/mnt/storage/TIE-corpus-parsed', pdf_basename)
+            #output_folder = os.path.join('/mnt/storage/TIE-corpus-parsed', pdf_basename)
+            output_folder = os.path.join('output', pdf_basename)
             metadata_dir = os.path.join(output_folder, 'metadata')
 
             # Check if the output folder and metadata directory exist and metadata contains any .json files

@@ -27,25 +27,23 @@ def ocr_text_correction(text):
 
     return text
 
-def generate_description_region(page_metadata):
-     # Get all regions above (with lower position), sorted by position (top to bottom)
-
+def generate_description_region(page_metadata_list, caption):
+    description_texts = []
+    for page_metadata in page_metadata_list:
+        # Get all regions above (with lower position), sorted by position (top to bottom)
         page_metadata = page_metadata['regions']
-        page_metadata = [r for r in page_metadata if r['label'] == 'Text']
-        page_metadata_sorted = sorted(page_metadata, key=lambda r: r['position'])
-        # Concatenate their OCR text in order
-        description_texts = [r.get('ocr_text', '') for r in page_metadata_sorted]
-        description = " ".join(description_texts)
-        
-        return description   
-    
-    
-   
-        
-        
-        
+        #page_metadata = [r for r in page_metadata if r['label'] == 'Text']
+        description_texts = []
+        for region in page_metadata:
+            if region.get('label', '').lower() == 'Text':
+                if caption in region.get('ocr_text', ''):
+                    description_texts.append(region['ocr_text'])
 
-def generate_description(page_metadata):
+    description = " ".join(description_texts)
+    print(f"Generated description: {description}")
+    return description
+
+def generate_description(page_metadata_list, caption):
     """
     For each region in page_metadata['regions'],
     - if label in ['image', 'table', 'picture', 'figure'], set 'description' to generate_description_region(page_metadata)
@@ -53,19 +51,22 @@ def generate_description(page_metadata):
     Returns the updated page_metadata dict .
     The description is limited to 300 characters.
     """
-    regions = page_metadata['regions']
-    for region in regions:
-        label = region.get('label', '').lower()
-        if label in ['image', 'table', 'picture', 'figure']:
-            # Generate description for this region
-            try:
-                description = generate_description_region(page_metadata)
-            except Exception as e:
-                description = region.get('ocr_text', '')
-            # Limit to 300 characters
-            if len(description) > 300:
-                description = description[:297] + '.'
-            region['description'] = description
-        else:
-            region['description'] = ''
+    for page_metadata in page_metadata_list:
+        if not page_metadata or 'regions' not in page_metadata or page_metadata['regions'] is None:
+            continue  # Skip empty or malformed metadata
+        regions = page_metadata['regions']
+        for region in regions:
+            label = region.get('label', '').lower()
+            if label in ['image', 'table', 'picture', 'figure']:
+                # Generate description for this region
+                try:
+                    description = generate_description_region(page_metadata_list, caption)
+                except Exception as e:
+                    description = region.get('ocr_text', '')
+                # Limit to 300 characters
+                if len(description) > 300:
+                    description = description[:297] + '.'
+                region['description'] = description
+            else:
+                region['description'] = ''
     return page_metadata

@@ -15,6 +15,8 @@ from pdf_to_pages import process_file    #returns a list of PIl images (per page
 from preprocessing import preprocess_image
 from caption import process_page_for_captions
 from text_correct import generate_description, ocr_text_correction
+import torch
+import re
 
 # Model loader functions (safe for multiprocessing)
 def get_layout_predictor():
@@ -298,20 +300,42 @@ def process_pdf(pdf_path, output_folder, padding=7):
         
         all_pages_metadata = []
         for page_num, (page_image, page_url) in enumerate(pdf_images_and_urls, start=1):
+            if page_num < 33:
+                continue
+            if page_num > 43:
+                break
             print(f"\nProcessing page {page_num}")
             regions = process_single_page(page_image, page_num, padding=5)
             if not regions:
                 print(f"No regions detected on page {page_num}")
                 continue
             page_metadata = crop_and_save_images(page_image, regions, output_folder, padding, page_url=page_url)
-            page_metadata = generate_description(page_metadata)
+            #page_metadata = generate_description(page_metadata)
             page_metadata = process_page_for_captions(page_metadata, page_num)
             all_pages_metadata.append(page_metadata)
 
             # Release models and free GPU memory after each batch (page)
-            import torch
+            
             torch.cuda.empty_cache()
             del regions, page_metadata, page_image
+        
+        for id, page_metadata in enumerate(all_pages_metadata, start=1):
+            prev_page_metadata = all_pages_metadata[id - 2] if id > 1 else None
+            next_page_metadata = all_pages_metadata[id] if id < len(all_pages_metadata) else None
+            for region in page_metadata['regions']:
+                # Add captions and descriptions to the region metadata
+                caption = region.get('captions', None)
+                print(id, caption)
+                if caption is not None:
+                    # Example: extract "Fig 2.2" or "Fig. 2.2" from the caption string
+                    match = re.search(r'([A-Za-z]\.?\s*\d+(\.\d+)*)', caption)
+                    if match:
+                        list_of_pages = [prev_page_metadata, page_metadata, next_page_metadata]
+                        cropped_caption = caption[:match.end()]
+                        print("Cropped caption:", cropped_caption)
+                        generate_description(list_of_pages, cropped_caption)
+            
+            
 
         complete_metadata = {
             'pdf_path': pdf_path,

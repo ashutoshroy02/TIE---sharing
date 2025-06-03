@@ -22,7 +22,7 @@ def render_page_to_image(page, dpi=200):
     return Image.open(BytesIO(img_bytes))
 
 
-def process_file(file_path, output_folder, process_dpi=200, save_dpi=75, max_workers=4, save_images=True):
+def process_file(file_path, output_folder, process_dpi=200, save_dpi=75, max_workers=4, save_images=False):
     """
     Converts PDF pages to images and optionally saves them.
     Uses process_dpi for the returned PIL images and save_dpi for saved images.
