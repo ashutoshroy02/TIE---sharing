@@ -7,7 +7,7 @@ This Python script uses OpenAI's CLIP model to classify images into one of the f
 - **Site Layout**
 - **Figure**
 
-### 📊 Classification Report
+### 📊 Classification Report  on [DATASET](https://drive.google.com/drive/folders/1eouIdtjQ57REbBbQ-jzHbCaBsHeYUWwP?usp=sharing)
 
 | Class        | Precision | Recall | F1-Score | Support |
 |--------------|-----------|--------|----------|---------|
