@@ -14,7 +14,9 @@ from typing import Dict, List, Any, Tuple, Union
 from pdf_to_pages import process_file    #returns a list of PIl images (per page) object for the pdf 
 from preprocessing import preprocess_image
 from caption import process_page_for_captions
-from text_correct import generate_description, ocr_text_correction
+from text_correct import generate_description
+import torch
+import re
 
 # Model loader functions (safe for multiprocessing)
 def get_layout_predictor():
@@ -289,29 +291,40 @@ def crop_and_save_images(image, regions, output_folder, padding=5, page_url=None
 
 def process_pdf(pdf_path, output_folder, padding=7):
     try:
-        pdf_images_and_urls = process_file(pdf_path, output_folder)
-        print(f"Extracted {len(pdf_images_and_urls)} pages from PDF: {pdf_path}")
+        pdf_pages_and_urls = process_file(pdf_path, output_folder)
+        print(f"Extracted {len(pdf_pages_and_urls)} pages from PDF: {pdf_path}")
         
-        if not pdf_images_and_urls:
-            print("No images extracted from PDF")
+        if not pdf_pages_and_urls:
+            print("No pages extracted from PDF")
             return
         
         all_pages_metadata = []
-        for page_num, (page_image, page_url) in enumerate(pdf_images_and_urls, start=1):
+        for page_num, (page_image, page_url) in enumerate(pdf_pages_and_urls, start=1):
             print(f"\nProcessing page {page_num}")
             regions = process_single_page(page_image, page_num, padding=5)
             if not regions:
                 print(f"No regions detected on page {page_num}")
                 continue
             page_metadata = crop_and_save_images(page_image, regions, output_folder, padding, page_url=page_url)
-            page_metadata = generate_description(page_metadata)
             page_metadata = process_page_for_captions(page_metadata, page_num)
             all_pages_metadata.append(page_metadata)
 
             # Release models and free GPU memory after each batch (page)
-            import torch
+            
             torch.cuda.empty_cache()
             del regions, page_metadata, page_image
+        
+        for id, page_metadata in enumerate(all_pages_metadata, start=1):
+            prev_page_metadata = all_pages_metadata[id - 2] if id > 1 else None
+            next_page_metadata = all_pages_metadata[id] if id < len(all_pages_metadata) else None
+            for region in page_metadata['regions']:
+                caption = region.get('captions', None)
+                if caption is not None:
+                    match = re.search(r'(?i)\b([A-Za-z]|Fig|Figure|Table|Image|Img)\.?\s*\d+(\.\d+)*', caption)
+                    if match:
+                        cropped_caption = caption[:match.end()]
+                        generate_description(prev_page_metadata, page_metadata, next_page_metadata, cropped_caption)
+            
 
         complete_metadata = {
             'pdf_path': pdf_path,
