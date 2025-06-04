@@ -300,16 +300,22 @@ def process_pdf(pdf_path, output_folder, padding=7):
         
         all_pages_metadata = []
         for page_num, (page_image, page_url) in enumerate(pdf_pages_and_urls, start=1):
+            if page_num < 65:
+                continue
+            if page_num > 65:
+                break
             print(f"\nProcessing page {page_num}")
             regions = process_single_page(page_image, page_num, padding=5)
             if not regions:
                 print(f"No regions detected on page {page_num}")
                 continue
             page_metadata = crop_and_save_images(page_image, regions, output_folder, padding, page_url=page_url)
+            #page_metadata = generate_description(page_metadata)
             page_metadata = process_page_for_captions(page_metadata, page_num)
             all_pages_metadata.append(page_metadata)
 
             # Release models and free GPU memory after each batch (page)
+            
             
             torch.cuda.empty_cache()
             del regions, page_metadata, page_image
@@ -318,12 +324,18 @@ def process_pdf(pdf_path, output_folder, padding=7):
             prev_page_metadata = all_pages_metadata[id - 2] if id > 1 else None
             next_page_metadata = all_pages_metadata[id] if id < len(all_pages_metadata) else None
             for region in page_metadata['regions']:
+                # Add captions and descriptions to the region metadata
                 caption = region.get('captions', None)
+                print(id, caption)
                 if caption is not None:
-                    match = re.search(r'(?i)\b([A-Za-z]|Fig|Figure|Table|Image|Img)\.?\s*\d+(\.\d+)*', caption)
+                    # Example: extract "Fig 2.2" or "Fig. 2.2" from the caption string
+                    match = re.search(r'([A-Za-z]\.?\s*\d+(\.\d+)*)', caption)
                     if match:
+                        list_of_pages = [prev_page_metadata, page_metadata, next_page_metadata]
                         cropped_caption = caption[:match.end()]
-                        generate_description(prev_page_metadata, page_metadata, next_page_metadata, cropped_caption)
+                        print("Cropped caption:", cropped_caption)
+                        generate_description(list_of_pages, cropped_caption)
+            
             
 
         complete_metadata = {
