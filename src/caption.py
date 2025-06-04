@@ -87,63 +87,6 @@ def find_nearest_region(caption_bbox, regions, search_above=True):
                 nearest_region = region
     return nearest_region
 
-# --- Main Functions ---
-
-# def process_page_for_captions(page,page_num):
-#     """
-#     Given a page dict (with 'regions'), finds captions and associates them with the nearest valid region.
-#     Modifies the regions in-place.
-#     """
-#     # print(page)
-#     regions = page['regions']
-#     # Step 1: Identify caption candidates
-#     caption_candidates = []
-#     for region in regions:
-#         text = region.get('ocr_text', '').strip()
-#         label = region.get('label', '')
-#         is_cap = is_caption(text, region_type=label)
-#         if is_cap:
-#             caption_candidates.append({
-#                 'text': text,
-#                 'bbox': region.get('padded_bbox'),
-#                 'position': region.get('position', 0)
-#             })
-#         else:
-#             # Fallback caption based on label
-#             if label in ['figure', 'image', 'Picture', 'fig','Figure', 'Picture']:
-#                 fallback_caption = 'Figure or Picture'
-#             elif label in ['table', 'tbl', 'Table']:
-#                 fallback_caption = 'Table'
-#             elif label == ['Map', 'map', 'Image']:
-#                 fallback_caption = 'Map'
-#             else:
-#                 fallback_caption = None
-
-#             if fallback_caption:
-#                 page_no = page_num
-#                 if page_no is not None:
-#                     fallback_caption += f" (p. {page_no})"
-#                 caption_candidates.append({
-#                     'text': fallback_caption,
-#                     'bbox': region.get('padded_bbox'),
-#                     'position': region.get('position', 0)
-#                 })
-    
-#     # Step 2: Associate captions with nearest valid region
-#     for caption in caption_candidates:
-#         caption_type = get_caption_type(caption['text'])
-       
-#         if not caption_type:
-            
-#             continue
-#         nearest = find_nearest_region(caption['bbox'], regions, caption_type, search_above=True)
-#         if not nearest:
-#             nearest = find_nearest_region(caption['bbox'], regions, caption_type, search_above=False)
-      
-#         if nearest:
-#             nearest['captions'] = caption['text']
-
-#     return page
 
 def process_page_for_captions(page, page_num):
     regions = page['regions']
@@ -160,39 +103,14 @@ def process_page_for_captions(page, page_num):
             # print(f"→ Caption matched by regex: '{text}'")
             match = re.search(r'([A-Za-z]\.?\s*\d+(\.\d+)*)', text)
             if match:
-                print("Caption: ", text)
+                # print("Caption: ", text)
                 caption_candidates.append({
                     'text': text,
-                    'bbox': region.get('padded_bbox') or region.get('bbox'),
-                    'position': region.get('position', 0)
-                })
-        '''else:
-            # Fallback caption
-            if label in ['figure', 'image', 'Picture', 'fig','Figure', 'Picture']:
-                fallback_caption = 'Figure:'
-            elif label in ['table', 'tbl', 'Table']:
-                fallback_caption = 'Table:'
-            elif label == ['Map', 'map', 'Image']:
-                fallback_caption = 'Map:'
-            else:
-                fallback_caption = None
-
-            if fallback_caption:
-                caption_text = f"{fallback_caption} (page: {page_num})"
-                # print(f"→ Using fallback caption: '{caption_text}' for label='{label}'")
-                caption_candidates.append({
-                    'text': caption_text,
                     'bbox': region.get('padded_bbox') or region.get('bbox'),
                     'position': region.get('position', 0)
                 })'''
 
     for caption in caption_candidates:
-        # caption_type = get_caption_type(caption['text'])
-        # print(f"Processing caption: '{caption['text']}''")
-
-        # if not caption_type:
-        #     print("⚠️ Skipping: caption type not detected")
-        #     continue
 
         nearest = find_nearest_region(caption['bbox'], regions ,search_above=True)
         if not nearest:
