@@ -50,6 +50,24 @@ CAPTION_REGEX = {
 
 # --- Helper Functions ---
 
+def extract_caption_contained_within(text, region_type=None):
+    if not text:
+        return False
+    text = re.sub(r'\s+', ' ', text.strip())
+    # If region_type is a figure/image-like label, check if text contains a caption pattern anywhere
+    if region_type and region_type.lower() in ['figure', 'image', 'picture', 'fig', 'table', 'map']:
+        for pattern in CAPTION_PATTERNS.get(region_type.lower(), []):
+            pattern_no_anchor = pattern[1:] if pattern.startswith('^') else pattern
+            match = re.search(pattern_no_anchor, text)
+            if match:
+                end_pos = text.find('<', match.end())
+                if end_pos == -1:
+                    extracted_text = text[match.start():]
+                else:
+                    extracted_text = text[match.start():end_pos]
+                return extracted_text.strip()
+    return None
+
 def is_caption(text, region_type=None):
     if not text:
         return False
@@ -98,18 +116,18 @@ def process_page_for_captions(page, page_num):
         text = region.get('ocr_text', '').strip()
         label = region.get('label', '')
         is_cap = is_caption(text, region_type=label)
-        # print(f"Checking region: label='{label}', text='{text}', is_caption={is_cap}")
-        
+        caption = extract_caption_contained_within(text, region_type=label)
+        if caption:
+            region['captions'] = caption
+            continue
         if is_cap:
-            # print(f"→ Caption matched by regex: '{text}'")
-            match = re.search(r'([A-Za-z]\.?\s*\d+(\.\d+)*)', text)
-            if match:
-                print("Caption: ", text)
-                caption_candidates.append({
-                    'text': text,
-                    'bbox': region.get('padded_bbox') or region.get('bbox'),
-                    'position': region.get('position', 0)
-                })
+            print(f"→ Caption matched by regex: '{text}'")
+            print("Caption: ", text)
+            caption_candidates.append({
+                'text': text,
+                'bbox': region.get('padded_bbox') or region.get('bbox'),
+                'position': region.get('position', 0)
+            })
         '''else:
             # Fallback caption
             if label in ['figure', 'image', 'Picture', 'fig','Figure', 'Picture']:

@@ -299,10 +299,10 @@ def process_pdf(pdf_path, output_folder, padding=7):
             return
         
         all_pages_metadata = []
-        for page_num, (page_image, page_url) in enumerate(pdf_images_and_urls, start=1):
-            if page_num < 33:
+        for page_num, (page_image, page_url) in enumerate(pdf_pages_and_urls, start=1):
+            if page_num < 65:
                 continue
-            if page_num > 43:
+            if page_num > 65:
                 break
             print(f"\nProcessing page {page_num}")
             regions = process_single_page(page_image, page_num, padding=5)
