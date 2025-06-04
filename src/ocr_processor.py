@@ -14,7 +14,7 @@ from typing import Dict, List, Any, Tuple, Union
 from pdf_to_pages import process_file    #returns a list of PIl images (per page) object for the pdf 
 from preprocessing import preprocess_image
 from caption import process_page_for_captions
-from text_correct import generate_description, ocr_text_correction
+from text_correct import generate_description
 import torch
 import re
 
