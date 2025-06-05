@@ -1,1 +1,1 @@
-Files to save for all members for the project TIE (Text to Image)
+Files to save for all members for the project TIE (Text to Image) + Searching(Vector + keyword)
